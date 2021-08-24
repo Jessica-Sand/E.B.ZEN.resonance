@@ -26,4 +26,14 @@ class ProductController extends CoreController
         
         $this->show('product/add');
     }
+
+    /**
+     * Method to edit a product
+     *
+     * @return void
+     */
+    public function edit() {
+        
+        $this->show('product/edit');
+    }
 }

@@ -1,5 +1,5 @@
 <div class="container my-4">
-    <a href="category_add.html" class="btn btn-success float-right">Ajouter</a>
+    <a href="<?= $router->generate('product-add') ?>" class="btn btn-success float-right">Ajouter</a>
     <h2>Liste des soins</h2>
     <table class="table table-hover mt-4">
         <thead>
@@ -18,7 +18,7 @@
                 <td></td>
                 <td>15 €</td>
                 <td class="text-right">
-                    <a href="" class="btn btn-sm btn-warning">
+                    <a href="<?= $router->generate('product-edit') ?>" class="btn btn-sm btn-warning">
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                     </a>
                     <!-- Example single danger button -->

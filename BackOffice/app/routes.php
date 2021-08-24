@@ -82,6 +82,13 @@ $this->addRoute(
     'add',
     'product-add'
 );
+$this->addRoute(
+    'GET',
+    '/product/edit',
+    'ProductController',
+    'edit',
+    'product-edit'
+);
 
 // Route for login
 $this->addRoute(

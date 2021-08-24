@@ -21,7 +21,7 @@
                                 <th scope="row">1</th>
                                 <td>Réflexologie plantaire</td>
                                 <td class="text-right">
-                                    <a href="" class="btn btn-sm btn-warning">
+                                    <a href="<?= $router->generate('treatment-edit') ?>" class="btn btn-sm btn-warning">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                     </a>
                                     <!-- Example single danger button -->
@@ -97,7 +97,7 @@
                                 <th scope="row">1</th>
                                 <td>Gel douche</td>
                                 <td class="text-right">
-                                    <a href="" class="btn btn-sm btn-warning">
+                                    <a href="<?= $router->generate('product-edit') ?>" class="btn btn-sm btn-warning">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                     </a>
                                     <!-- Example single danger button -->
