@@ -21,20 +21,27 @@ $this->addRoute(
     'main-home' // => route's name (for URL generation)
 );
 
-// Route for the service
+// Route for the treatment category
 $this->addRoute(
     'GET', // HTTP Method
-    '/service/list', // URL pattern
-    'ServiceController', // Controller name
+    '/category/list', // URL pattern
+    'CategoryController', // Controller name
     'list', // Method name
-    'service-list' // => route's name (for URL generation)
+    'category-list' // => route's name (for URL generation)
 );
 $this->addRoute(
     'GET',
-    '/service/add',
-    'ServiceController',
+    '/category/add',
+    'CategoryController',
     'add',
-    'service-add'
+    'category-add'
+);
+$this->addRoute(
+    'GET',
+    '/category/edit',
+    'CategoryController',
+    'edit',
+    'category-edit'
 );
 
 // Route for the treatments
@@ -51,6 +58,13 @@ $this->addRoute(
     'TreatmentController',
     'add',
     'treatment-add'
+);
+$this->addRoute(
+    'GET',
+    '/treatment/edit',
+    'TreatmentController',
+    'edit',
+    'treatment-edit'
 );
 
 // Route for the products

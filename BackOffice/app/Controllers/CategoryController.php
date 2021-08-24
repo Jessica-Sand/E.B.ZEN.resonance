@@ -4,17 +4,17 @@ namespace App\Controllers;
 
 use BackOffice\Controllers\CoreController;
 
-class TreatmentController extends CoreController
+class CategoryController extends CoreController
 {
     /**
-     * Method to show the list of the treatement
+     * Method to show the list of the category treatement
      *
      * @return void
      */
     public function list() {
-        // $allTreatments = Treatment::findAll();
+        // $allCategorys = Category::findAll();
 
-        $this->show('treatment/list');
+        $this->show('category/list');
     }
 
     /**
@@ -24,7 +24,7 @@ class TreatmentController extends CoreController
      */
     public function add() {
         
-        $this->show('treatment/add');
+        $this->show('category/add');
     }
 
     /**
@@ -34,6 +34,6 @@ class TreatmentController extends CoreController
      */
     public function edit() {
         
-        $this->show('treatment/edit');
+        $this->show('category/edit');
     }
 }

@@ -5,7 +5,7 @@ namespace App\Models;
 use BackOffice\Utils\Database;
 use PDO;
 
-class Service extends \BackOffice\Models\CoreModel {
+class Category extends \BackOffice\Models\CoreModel {
 
     protected $title;
     protected $description;

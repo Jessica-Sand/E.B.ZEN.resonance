@@ -19,7 +19,7 @@
                     <a class="nav-link<?= $currentPage == 'treatment/list' ? ' active' : '' ?>" href="<?= $router->generate('treatment-list') ?>">Soins</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link<?= $currentPage == 'service/list' ? ' active' : '' ?>" href="<?= $router->generate('service-list') ?>">Catégories de soin</a>
+                    <a class="nav-link<?= $currentPage == 'category/list' ? ' active' : '' ?>" href="<?= $router->generate('category-list') ?>">Catégories de soin</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link<?= $currentPage == 'product/list' ? ' active' : '' ?>" href="<?= $router->generate('product-list') ?>">Produits</a>

@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use BackOffice\Controllers\CoreController;
 
-use App\Models\Service;
+use App\Models\Category;
 use App\Models\Product;
 
 class MainController extends CoreController
@@ -15,7 +15,7 @@ class MainController extends CoreController
     public function home()
     {
         $this->show('main/home', [
-            'categories' => Service::findAll(),
+            'categories' => Category::findAll(),
             'products' => Product::findAll()
         ]);
     }

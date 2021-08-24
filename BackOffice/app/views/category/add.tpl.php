@@ -1,6 +1,6 @@
 <div class="container my-4">
-    <a href="<?= $router->generate('service-list') ?>" class="btn btn-success float-right">Retour</a>
-    <h2>Ajouter un soin</h2>
+    <a href="<?= $router->generate('category-list') ?>" class="btn btn-success float-right">Retour</a>
+    <h2>Ajouter une categorie de soin</h2>
 
     <form action="" method="POST" class="mt-5">
         <div class="form-group">
