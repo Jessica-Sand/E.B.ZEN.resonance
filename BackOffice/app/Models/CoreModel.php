@@ -23,22 +23,21 @@ abstract class CoreModel
     protected $updated_at;
 
     /**
-     * Méthode permettant de sauvegarder en BDD (insert ou update)
-     * Si l'objet a un id => update
-     * Sinon => insert
+     * Method to save in the DB
+     * If the object has an id => update
+     * Else => insert
      * 
      * @return bool
      */
     public function save()
     {
-        // Si l'id de l'objet courant est > 0
+        // If the id of the current object is > 0
         if ($this->id > 0) {
-            // alors, c'est qu'on veut mettre à jour la ligne dans la table
+            // then, is it because we want to update the line of the table
             return $this->update();
         }
-        // Sinon
         else {
-            // Alors on veut ajouter une ligne dans la table
+            // then it is beacuse we want to add a new line on the table
             return $this->insert();
         }
     }

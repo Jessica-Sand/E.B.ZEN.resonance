@@ -1,6 +1,6 @@
 <?php
 
-namespace oFramework\Utils;
+namespace BackOffice\Utils;
 
 use PDO;
 

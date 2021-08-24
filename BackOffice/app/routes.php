@@ -84,6 +84,13 @@ $this->addRoute(
 );
 $this->addRoute(
     'GET',
+    '/product/add',
+    'ProductController',
+    'create',
+    'product-create'
+);
+$this->addRoute(
+    'GET',
     '/product/edit',
     'ProductController',
     'edit',

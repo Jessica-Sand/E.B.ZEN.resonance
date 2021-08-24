@@ -24,9 +24,9 @@ class Application
         $this->altoRouter = new AltoRouter();
 
         if (array_key_exists('BASE_URI', $_SERVER)) {
-            // Alors on définit le basePath d'AltoRouter
+            // then we definit the basePath of d'AltoRouter
             $this->altoRouter->setBasePath($_SERVER['BASE_URI']);
-            // ainsi, nos routes correspondront à l'URL, après la suite de sous-répertoire
+            // thus, or route match with the URL after the subdirectory sequence
         }
         // Not useful anymore 
         // @see CoreController::show#L205
@@ -59,9 +59,9 @@ class Application
     }
 
     /**
-     * Méthode lançant notre application
-     * => exécution spécifique pour chaque page
-     * Analogie : pour ensuite pouvoir passer un appel spécifique à une personne
+     * Method launching our app
+     * => specific execution for each page
+     * Analogy : to then be able to make a specific call to a person
      */
     public function run()
     {
@@ -81,11 +81,11 @@ class Application
     }
 
     /**
-     * Get Propriété contenant l'objet AltoRouter
+     * Get proprety content the object AltoRouter
      *
      * @return AltoRouter
      */
-    public function getAltoRouter(): AltoRouter // ": AltoRouter" = typehint = typage du retour de la méthode
+    public function getAltoRouter(): AltoRouter // ": AltoRouter" = typehint = typing of the method's return
     {
         return $this->altoRouter;
     }
