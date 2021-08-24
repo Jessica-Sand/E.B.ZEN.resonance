@@ -1,5 +1,5 @@
-SERVICE: title, description, picture, created_at, updated_at
-CONTENT, 0N SERVICE, 11 TREATEMENT
+CATEGORY: title, description, picture, created_at, updated_at
+CONTENT, 0N CATEGORY, 11 TREATEMENT
 TREATEMENT: name, description, picture, duration, price, created_at, updated_at
 
 BRAND: name, picture, created_at, updated_at
