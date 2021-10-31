@@ -24,7 +24,7 @@
         <div class="card border-0 rounded-0">
             <div class="row g-0 m-5">
                 <div class="col-md-5">
-                    <img src="<?=$assetsBaseUri ?>images/<?= $category->getPicture() ?>.jpg" alt="image soin" class="img-fluid rounded">
+                    <img src="<?=$assetsBaseUri ?>images/<?= $category->getPicture() ?>" alt="image soin" class="img-fluid rounded">
                 </div>
                 <div class="col-md-7">
                     <div class="card-body">

@@ -16,14 +16,14 @@
             </div>
             <div class="form-group mb-3">
                 <label for="description">Description</label>
-                <input type="text" class="form-control" id="description" name="description" placeholder="Description" aria-describedby="descriptionHelpBlock">
-                <small id="descriptionHelpBlock" class="form-text text-info" value="<?= $category->getDescription() ?>">
+                <input type="text" class="form-control" id="description" name="description" placeholder="Description" aria-describedby="descriptionHelpBlock" value="<?= $category->getDescription() ?>">
+                <small id="descriptionHelpBlock" class="form-text text-info">
                     Description de la catégorie des soins en détail
                 </small>
             </div>
             <div class="form-group mb-3">
                 <label for="picture">Image</label>
-                <input type="text" class="form-control" id="picture" name="picture" placeholder="image jpg, gif, svg, png" aria-describedby="pictureHelpBlock" value="<?= $category->getPicture() ?>">
+                <input type="file" class="form-control" id="picture" name="picture" placeholder="image jpg, gif, svg, png" aria-describedby="pictureHelpBlock" value="<?= $category->getPicture() ?>">
                 <small id="pictureHelpBlock" class="form-text text-info">
                     Une image (jpg, gif, svg ou png) pour illustrer la catégorie de soin
                 </small>
