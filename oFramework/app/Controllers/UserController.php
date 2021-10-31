@@ -9,7 +9,7 @@ class UserController extends CoreController
 {
 
     /**
-     * Méthode permettant d'afficher un formulaire de connexion
+     * Method to show a login formular
      *
      * @return void
      */
@@ -20,7 +20,7 @@ class UserController extends CoreController
     }
 
     /**
-     * Méthode permettant d'afficher la liste des administrateurs du site
+     * Method to show the list of the admin
      * 
      * @return void
      */
@@ -31,23 +31,21 @@ class UserController extends CoreController
 
     public function doLogin()
     {
-        // 1) On récupère les infos du formulaire
         $email = filter_input(INPUT_POST, 'email');
         $password = filter_input(INPUT_POST, 'password');
 
 
-        // On vérifie que l'utilisateur existe bien en BDD
+        // verify if the user exist in the DB
         $user = AppUser::findByEmail($email);
 
         if ($user !== false) {
-            // L'utilisateur existe bien en BDD (son email est correct)
-            // On va donc tester son mot de passe
+            // The user exist (the email is correct)
+            // testing the password
 
             // if ($user !== false && $user->getPassword() === $password) {
             if (password_verify($password, $user->getPassword())) {
-                // L'utilisateur existe en BDD et que son mot de passe
-                // correspond à celui présent en BDD
-                // On met en session les informations de l'utilisateur
+                // The user exist in the DB et the password is the same as in the DB
+                // We put the user's information in session
                 $_SESSION['userId'] = $user->getId();
                 $_SESSION['userObject'] = $user;
                 $_SESSION['isConnected'] = true;
@@ -55,19 +53,19 @@ class UserController extends CoreController
                 $this->redirect('admin-home');
                 exit;
             } else {
-                // Le mot de passe n'est pas correct
-                // mais on reste volontairement vague dans le message :-)...La sécu avant tout !
+                // The password is wrong
+                // but we don't give a hint in the error message why it doesn't works 
                 $errorList[] = "Utilisateur ou mot de passe incorrect";
             }
         } else {
-            // L'utilisateur n'existe pas en BDD (son email n'existe)
-            // mais on reste volontairement vague dans le message :-)...La sécu avant tout !
+            //  The user dosn't exist in the DB (the email doesn't exist)
+            //  but we don't give a hint in the error message why it doesn't works
             $errorList[] = "Utilisateur ou mot de passe incorrect";
         }
 
-        // Le tableau n'est pas vide, il y a donc des erreurs
+        // The table isn't empty, there are errors
         if (!empty($errorList)) {
-            // On transmet le tableau au formulaire de connexion
+            // We send the table to the connection form
             // views/user/login.tpl.php
             $this->show('admin/user/login', [
                 'errorList' => $errorList
@@ -86,32 +84,30 @@ class UserController extends CoreController
     }
 
     /**
-     * Méthode permettant d'afficher un formulaire d'ajout d'un utilisateur
+     * Methode to show a formular to add a new user
      *
      * @return void
      */
     public function add()
     {
-        // 1) On génère un code unique
+        // 1) We generate a unique code
         // $token = $this->generateToken();
 
-        // 3) On envoie le code à l'utilisateur (dans le formulaire à sécuriser)
+        // 3) We send the code to the user (in the secured formular)
         // views/user/add.tpl.php
         $this->show('admin/user/add');
     }
 
     /**
-     * Méthode permettant l'ajout d'un utilisateur en BDD
+     * Method to add a new user in the DB
      *
      * @return void
      */
     public function create()
     {
-        // Cette page n'est accessible qu'aux administrateurs du site
+        // This page is only accessible for the admin
         // $this->checkAuthorization(['admin']);
 
-        // Une fois le formulaire d'ajout soumis
-        // on récupére les données transportées en POST
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
         $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING);
         $lastname = filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_STRING);
@@ -119,9 +115,7 @@ class UserController extends CoreController
         $status = filter_input(INPUT_POST, 'status', FILTER_VALIDATE_INT);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
-        // On vérifie que les données ne sont pas vides et incorrectes
-        // Pour tester l'unicité de l'email, on peut utiliser la méthode
-        // findByEmail 
+        // Testing the uniqueness of the de email, with the method findByEmail 
         if ($email == false) {
             $this->addFlashError("Merci de saisir un email valide");
         }
@@ -139,9 +133,9 @@ class UserController extends CoreController
             $this->addFlashError("Merci de saisir tous les champs du formulaire");
         }
 
-        // Si le tableau d'erreurs est vide, pas d'erreurs...
+        // If the error table is empty, no erros...
         if (empty($_SESSION['errors'])) {
-            // Je peux créer l'utilisateur
+            // We can create a user
             $user = new AppUser();
             $user->setEmail($email);
             $user->setLastname($lastname);
@@ -150,29 +144,21 @@ class UserController extends CoreController
             $user->setStatus($status);
             $user->setPassword(password_hash($password, PASSWORD_DEFAULT));
 
-            // On enregistre l'utilisateur en BDD
             $saved = $user->save();
 
             if ($saved === true) {
-                // Si la sauvegarde s'est bien passée
-                // On redirige vers la list des utilisateurs
                 $this->addFlashInfo("L'utilisateur {$user->getFirstname()} a bien été créé");
                 $this->redirect('admin-list');
             } else {
-                // Si la sauvegarde s'est mal passée
-                // On redirige vers le formulaire de départ
-                // et on affiche un message d'erreur
                 $this->addFlashError('Erreur durant la sauvegarde');
                 $this->redirect('admin-add');
             }
         } else {
-            // Il y a des erreurs...je les affiche
+            // No erros ... show it
             // $this->show('admin/add', [
             //     'errorList' => $errorList
             // ]);
 
-            // On redirige vers le formulaire d'ajout (pour éviter la double soumission des données)
-            // Les messages d'erreur s'afficheront grâce aux messages flash
             $this->redirect('admin-add');
         }
     }
