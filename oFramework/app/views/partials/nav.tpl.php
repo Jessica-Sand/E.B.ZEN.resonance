@@ -13,32 +13,24 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="<?= $router->generate('main-home') ?>">Home</a>
+                    <a class="nav-link<?= $currentPage == 'main/home' ? ' active' : '' ?>" aria-current="page" href="<?= $router->generate('main-home') ?>">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">
+                    <a class="nav-link<?= $currentPage == 'treatment/list' ? ' active' : '' ?>" href="<?= $router->generate('treatment-category') ?>">
                         Soins
+                    </a>      
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link<?= $currentPage == 'shop/list' ? ' active' : '' ?>" href="<?= $router->generate('shop-list') ?>">
+                    Boutique
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="<?= $router->generate('soin-details') ?>">Reflexologie</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Fleurs de Bach</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Aromathérapie</a></li>
-                    </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= $router->generate('catalogue-list') ?>">Boutique</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= $router->generate('main-contact') ?>">Contact</a>
+                    <a class="nav-link<?= $currentPage == 'main/contact' ? ' active' : '' ?>" href="<?= $router->generate('main-contact') ?>">
+                    Contact
+                    </a>
                 </li>
             </ul>
-
         </div>
     </div>
 </nav>

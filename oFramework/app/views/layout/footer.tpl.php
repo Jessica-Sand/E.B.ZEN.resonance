@@ -36,10 +36,10 @@
                         Avis 1
                     </p>
                     <p>
-                        <span class="fw-bolder text-decoration-underline">Contre indication</span> : maladie cardiaque récente, phlébite récente.
+                        Contre indication : maladie cardiaque récente, phlébite récente.
                     </p>
                     <p>
-                        <span class="fw-bolder text-decoration-underline">Attention</span> : la réflexologie ne se substitue pas à la médecine allopathique
+                        Attention : la réflexologie ne se substitue pas à la médecine allopathique
                     </p>
                 </div>
                 <!-- Grid column -->

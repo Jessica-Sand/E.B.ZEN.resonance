@@ -3,14 +3,12 @@
 namespace App\Controllers;
 
 use oFramework\Controllers\CoreController;
-
 use App\Models\Category;
-use App\Models\Product;
 
 class MainController extends CoreController
 {
     /**
-     * Method for the homepage
+     * Method for the home page
      */
     public function home()
     {
