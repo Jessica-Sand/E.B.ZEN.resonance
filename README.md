@@ -1,6 +1,6 @@
 ## EB. ZEN Résônance
 
-<img src="BackOffice/public/assets/images/logo.png">
+<img src="oFramework/public/assets/images/logo.png">
 
 ## Introduction
 
