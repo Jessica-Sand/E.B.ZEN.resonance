@@ -1,5 +1,5 @@
 <div class="container my-4">
-    <h1>403 Unauthorized</h1>
+    <h2>403 Unauthorized</h2>
 
     <p>
         oFramework :: access denied

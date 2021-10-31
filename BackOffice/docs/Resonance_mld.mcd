@@ -1,4 +1,0 @@
-CATEGORY ( title, description, picture, created_at, updated_at )
-TREATEMENT ( name, description, picture, duration, price, created_at, updated_at, title )
-BRAND ( name, picture, created_at, updated_at )
-PRODUCT ( name, subtitle, description, picture, content, price, created_at, updated_at, name.1 )

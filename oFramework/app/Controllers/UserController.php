@@ -16,7 +16,17 @@ class UserController extends CoreController
     public function login()
     {
         // views/user/login.tpl.php
-        $this->show('user/login');
+        $this->show('admin/user/login');
+    }
+
+    /**
+     * Méthode permettant d'afficher la liste des administrateurs du site
+     * 
+     * @return void
+     */
+    public function list()
+    {
+        $this->show('admin/user/list');
     }
 
     public function doLogin()
@@ -42,7 +52,7 @@ class UserController extends CoreController
                 $_SESSION['userObject'] = $user;
                 $_SESSION['isConnected'] = true;
 
-                $this->redirect('main-home');
+                $this->redirect('admin-home');
                 exit;
             } else {
                 // Le mot de passe n'est pas correct
@@ -59,7 +69,7 @@ class UserController extends CoreController
         if (!empty($errorList)) {
             // On transmet le tableau au formulaire de connexion
             // views/user/login.tpl.php
-            $this->show('user/login', [
+            $this->show('admin/user/login', [
                 'errorList' => $errorList
             ]);
         }
@@ -71,7 +81,7 @@ class UserController extends CoreController
         unset($_SESSION['userObject']);
         unset($_SESSION['isConnected']);
 
-        header('Location: /');
+        header('Location: /admin/');
         exit;
     }
 
@@ -83,13 +93,11 @@ class UserController extends CoreController
     public function add()
     {
         // 1) On génère un code unique
-        $token = $this->generateToken();
+        // $token = $this->generateToken();
 
         // 3) On envoie le code à l'utilisateur (dans le formulaire à sécuriser)
         // views/user/add.tpl.php
-        $this->show('user/add', [
-            'token' => $token
-        ]);
+        $this->show('admin/user/add');
     }
 
     /**
@@ -100,7 +108,7 @@ class UserController extends CoreController
     public function create()
     {
         // Cette page n'est accessible qu'aux administrateurs du site
-        $this->checkAuthorization(['admin']);
+        // $this->checkAuthorization(['admin']);
 
         // Une fois le formulaire d'ajout soumis
         // on récupére les données transportées en POST
@@ -149,23 +157,23 @@ class UserController extends CoreController
                 // Si la sauvegarde s'est bien passée
                 // On redirige vers la list des utilisateurs
                 $this->addFlashInfo("L'utilisateur {$user->getFirstname()} a bien été créé");
-                $this->redirect('user-list');
+                $this->redirect('admin-list');
             } else {
                 // Si la sauvegarde s'est mal passée
                 // On redirige vers le formulaire de départ
                 // et on affiche un message d'erreur
                 $this->addFlashError('Erreur durant la sauvegarde');
-                $this->redirect('user-add');
+                $this->redirect('admin-add');
             }
         } else {
             // Il y a des erreurs...je les affiche
-            // $this->show('user/add', [
+            // $this->show('admin/add', [
             //     'errorList' => $errorList
             // ]);
 
             // On redirige vers le formulaire d'ajout (pour éviter la double soumission des données)
             // Les messages d'erreur s'afficheront grâce aux messages flash
-            $this->redirect('user-add');
+            $this->redirect('admin-add');
         }
     }
 }

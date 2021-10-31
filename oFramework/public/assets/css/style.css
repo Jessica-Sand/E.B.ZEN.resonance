@@ -5,13 +5,16 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    padding-top: 8.2em;
 }
-#top {
-    margin-top: 8em;
-}
+
 h1 {
     text-align: center;
     color: #343a40;
+}
+h2 {
+  text-align: center;
+  color: #343a40;
 }
 h5 {
     color: #6eabdc;
@@ -72,15 +75,6 @@ a:hover {
 }
 h3 {
     color: #6eabdc;
-}
-
-/** WARNING SECTION **/
-.warning {
-    background-color: #ffffff;
-    text-align: center;
-}
-.warning__dont {
-    border-bottom: solid 1px  #343a40;
 }
 
 /** ABOUT SECTION **/
