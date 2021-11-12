@@ -24,7 +24,7 @@
              <div class="col-lg-6 col-sm-12">
                  <div class="product-image">
                      <a href="../shop/detail.html" class="product-hover-overlay-link">
-                         <img src="<?=$assetsBaseUri ?>images/<?= $product->getPicture() ?>.jpg" alt="product" class="img-fluid">
+                         <img src="<?=$assetsBaseUri ?>images/<?= $product->getPicture() ?>" alt="product" class="img-fluid">
                      </a>
                  </div>
              </div>
@@ -55,11 +55,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-end">
+                <!-- <div class="d-flex justify-content-end">
                     <div class="product-action-buttons">
                         <form action="" method="post">
                             <input type="hidden" name="product_id" value="1">
-                            <a href="<?= $router->generate('shop-cart') ?>" class="product-hover-overlay-link">
+                            <a href="" class="product-hover-overlay-link">
                                 <button class="btn btn-buy" id="buy">
                                     <span class="btn-buy-label ml-2">
                                         Ajouter
@@ -69,7 +69,7 @@
                             </a>
                         </form>
                     </div>
-                </div>
+                </div> -->
              </div>
          </div>
      </div>

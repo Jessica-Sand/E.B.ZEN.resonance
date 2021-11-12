@@ -9,14 +9,14 @@
             <i class="fas fa-map-marker-alt fa-2x"></i>
             <p class="card-text fs-5 text">18 rue de Soufflenheim • 67410 Drusenheim</p>
             <h5 class="card-title m-4 fs-3" id="tel-number">06 70 48 52 95</h5>
-            <a href="#" class="btn btn-primary btn-lg call">
+            <!-- <a href="#" class="btn btn-primary btn-lg call">
                 <i class="fas fa-mobile-alt fa-lg"></i>
                 Appelez
             </a>
             <a href="#" class="btn btn-primary btn-lg calendar">
                 <i class="far fa-calendar-alt fa-lg"></i>
                 Réservez un rendez-vous
-            </a>
+            </a> -->
         </div>
     </div>
 

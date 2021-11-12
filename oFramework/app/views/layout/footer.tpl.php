@@ -7,7 +7,7 @@
         </div>
         <!-- Right -->
         <div>
-            <a href="" class="me-4 text-reset">
+            <a href="https://www.facebook.com/pg/ReflexoEB.ZEN" class="me-4 text-reset">
                 <i class="fab fa-facebook-f"></i>
             </a>
         </div>
@@ -32,9 +32,10 @@
                     <p>
                         SIREN : 880918040
                     </p>
-                    <p class="note">
+                    <hr />
+                    <!-- <p class="note">
                         Avis 1
-                    </p>
+                    </p> -->
                     <p>
                         Contre indication : maladie cardiaque récente, phlébite récente.
                     </p>
@@ -55,7 +56,7 @@
                     <p>Mercredi : 8h à 18h</p>
                     <p>Jeudi : 10h à 20h</p>
                     <p>Vendredi : 8h à 17h</p>
-                    <p>Samedi : 9h à 20h</p>
+                    <p>Samedi : 8h à 12h</p>
                 </div>
                 <!-- Grid column -->
 
@@ -71,9 +72,9 @@
                     <p>
                         <a href="#!" class="text-reset">Vie privée</a>
                     </p>
-                    <p>
+                    <!-- <p>
                         <a href="#!" class="text-reset">Déposez un avis</a>
-                    </p>
+                    </p> -->
                 </div>
                 <!-- Grid column -->
 

@@ -25,11 +25,7 @@
                     Boutique
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link<?= $currentPage == 'main/contact' ? ' active' : '' ?>" href="<?= $router->generate('main-contact') ?>">
-                    Contact
-                    </a>
-                </li>
+                
             </ul>
         </div>
     </div>

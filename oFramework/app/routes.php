@@ -56,7 +56,7 @@ $this->addRoute(
 // Route for the shop
 $this->addRoute(
     'GET',
-    '/boutique/list',
+    '/boutique',
     'ShopController',
     'list',
     'shop-list'

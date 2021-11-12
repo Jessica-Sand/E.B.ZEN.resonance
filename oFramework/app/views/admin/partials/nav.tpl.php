@@ -13,8 +13,6 @@
                     <a class="nav-link<?= $currentPage == 'admin/home' ? ' active' : '' ?>" href="<?= $router->generate('admin-home') ?>">Accueil <span class="sr-only">(current)</span></a>
                 </li>
 
-
-                    
                 <li class="nav-item">
                     <a class="nav-link<?= $currentPage == 'admin/treatment/list' ? ' active' : '' ?>" href="<?= $router->generate('treatment-list') ?>">Soins</a>
                 </li>

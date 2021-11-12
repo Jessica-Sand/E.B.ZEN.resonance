@@ -14,7 +14,8 @@
             </div>
             <div class="form-group mb-3">
                 <label for="description">Description</label>
-                <input type="text" class="form-control" id="description" name="description" placeholder="Description" aria-describedby="descriptionHelpBlock">
+                <textarea class="form-control" id="description" name="description" rows="5">
+                </textarea>
                 <small id="descriptionHelpBlock" class="form-text text-info">
                     Description de la catégorie des soins en détail
                 </small>

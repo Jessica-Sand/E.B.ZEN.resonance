@@ -29,14 +29,15 @@
             </div>                
             <div class="form-group mb-3">
                 <label for="description">Description</label>
-                 <input type="text" class="form-control" id="description" name="description" placeholder="Description" aria-describedby="descriptionHelpBlock">
+                <textarea class="form-control" id="description" name="description" rows="10">
+                </textarea>
                 <small id="descriptionHelpBlock" class="form-text text-info">
                     Description du produit
                 </small>
             </div>
              <div class="form-group mb-3">
                 <label for="price">Prix</label>
-                <input type="number" class="form-control" id="price" name="price" placeholder="Prix" aria-describedby="priceHelpBlock">
+                <input type="text" class="form-control" id="price" name="price" placeholder="Prix" aria-describedby="priceHelpBlock">
                 <small id="priceHelpBlock" class="form-text text-info">
                     Le prix du produit
                 </small>

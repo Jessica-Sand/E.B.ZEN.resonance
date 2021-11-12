@@ -27,7 +27,7 @@
                                 <?= $category->getTitle() ?>
                             </h5>
                         </div>
-                        <img src="<?=$assetsBaseUri ?>images/<?= $category->getPicture() ?>.jpeg" class="card-img-bottom" alt="feet">
+                        <img src="<?=$assetsBaseUri ?>images/<?= $category->getPicture() ?>" class="card-img-bottom" alt="image illustrant les soins">
                     </div>
                 </a>
             </div>
