@@ -72,7 +72,7 @@ a:hover {
     color: #fff;
 }
 #tel-number:hover {
-  color: #6eabdc;
+  color: #6eabdc !important;
 }
 
 /** SERVICES SECTION **/
@@ -218,6 +218,16 @@ footer {
   .product-image {
     overflow: hidden;
   }
+      /* changing image size */
+      @media screen and (max-width: 767px) {
+        .img-fluid { max-width: 100%; }
+    }
+    @media screen and (min-width:768px) and (max-width: 991px) {
+      .img-fluid { max-width: 90%; }
+    }
+    @media screen and (min-width: 992px) {
+      .img-fluid { max-width: 80%; }
+    }
   .product {
     transition: all .6s
   }
