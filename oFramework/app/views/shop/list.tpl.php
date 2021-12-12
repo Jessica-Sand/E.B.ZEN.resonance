@@ -36,7 +36,7 @@
                         <!-- <a href="#" class="btn btn-outline-dark btn-product-left">
                             <i class="fa fa-shopping-cart"></i>
                         </a> -->
-                        <a href="../shop/detail.html" class="btn btn-dark btn-buy">
+                        <a href="<?= $router->generate('shop-details', ['id'=> $product->getId()]) ?>" class="btn btn-dark btn-buy">
                             <i class="fa-search fa"></i>
                             <span class="btn-buy-label ml-2">Voir</span>
                         </a>
@@ -45,7 +45,7 @@
                         <p class="text-muted text-sm mb-1">
                             <?= $product->getSubtitle() ?></p>
                         <h3 class="h6 text-uppercase mb-1">
-                            <a href="../shop/detail.html" class="text-dark">
+                            <a href="<?= $router->generate('shop-details', ['id'=> $product->getId()]) ?>" class="text-dark">
                                 <?= $product->getName() ?>
                             </a>
                         </h3>
