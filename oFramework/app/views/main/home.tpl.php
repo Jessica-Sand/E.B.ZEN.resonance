@@ -8,7 +8,7 @@
         <div class="card-body mt-4 mb-4">
             <i class="fas fa-map-marker-alt fa-2x"></i>
             <p class="card-text fs-5 text">18 rue de Soufflenheim • 67410 Drusenheim</p>
-            <h5 class="card-title m-4 fs-3" id="tel-number">06 70 48 52 95</h5>
+            <h5 class="card-title m-4 fs-3"><a href="tel:06.70.48.52.95" id="tel-number">06 70 48 52 95</a></h5>
             <!-- <a href="#" class="btn btn-primary btn-lg call">
                 <i class="fas fa-mobile-alt fa-lg"></i>
                 Appelez

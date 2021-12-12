@@ -5,9 +5,12 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    padding-top: 8.2em;
+      
 }
-
+.card-header {
+  background-color: #fff;
+  padding: 12em 0em 2em 0em;
+}
 h1 {
     text-align: center;
     color: #343a40;
@@ -68,6 +71,9 @@ a:hover {
 #tel-number {
     color: #fff;
 }
+#tel-number:hover {
+  color: #6eabdc;
+}
 
 /** SERVICES SECTION **/
 .services { 
@@ -105,6 +111,9 @@ footer {
     background-color: #343a40;
     color: #ffffff;
     text-align: center;
+}
+.fa-facebook-f {
+  color: #6eabdc;
 }
 .note {
     color: #6eabdc;
