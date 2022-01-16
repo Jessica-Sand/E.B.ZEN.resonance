@@ -92,6 +92,22 @@ $this->addRoute(
     'user-dologin' // => route's name (for URL generation)
 );
 
+// Route for the blog pages
+$this->addRoute(
+    'GET',
+    '/blog/list',
+    'BlogCategory',
+    '',
+    ''
+)
+$this->addRoute(
+    'GET',
+    '/blog/show/[i:id]',
+    'BlogCategory',
+    '',
+    ''
+)
+
 // Admin routes
 
 // Route for backoffice homepage
