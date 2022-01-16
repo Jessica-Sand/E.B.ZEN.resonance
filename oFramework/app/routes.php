@@ -96,17 +96,17 @@ $this->addRoute(
 $this->addRoute(
     'GET',
     '/blog/list',
-    'BlogCategory',
-    '',
-    ''
-)
+    'BlogController',
+    'list',
+    'blog-list'
+);
 $this->addRoute(
     'GET',
-    '/blog/show/[i:id]',
-    'BlogCategory',
-    '',
-    ''
-)
+    '/blog/details',
+    'BlogController',
+    'details',
+    'blog-details'
+);
 
 // Admin routes
 

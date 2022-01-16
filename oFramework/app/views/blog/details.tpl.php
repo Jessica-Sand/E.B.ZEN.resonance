@@ -17,19 +17,16 @@
 
     <section class="products-grid bg-white">
         <div class="container-fluid">
-            <article class="card">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="<?=$assetsBaseUri ?>images/anniversaire.jpg" class="img-fluid" alt="...">
-                    </div>
-                    <div class=" col-md-8">
-                        <div class="card-body">
-                            <p class="infos">
-                                <time datetime="2021-01-14">14/01/2021</time> 
-                                <span class="badge bg-info text-dark">Info</span>
-                            </p>
-                            <h3 class="card-title"><a href="article.html">TEMPS LIBRE ..</a></h3>
-                            <p class="card-text">Prendre une heure par-ci par-là 
+
+<div class="card mb-3 border-0">
+<h3 class="card-title text-center">TEMPS LIBRE ..</h3>
+  <img src="<?=$assetsBaseUri ?>images/anniversaire.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="infos">
+        <time datetime="2021-01-14">14/01/2021</time> 
+        <span class="badge bg-info text-dark">Info</span>
+      </p>
+       <p class="card-text">Prendre une heure par-ci par-là 
                             Simplement pour vous faire plaisir , soulève votre peur d'être jugé égoïste ou paresseux .
                             Mais qu'arriverait-il donc si vous vous échappiez de temps en temps ?
                             Il n'y a pas de mal à se faire plaisir.
@@ -38,11 +35,9 @@
                             Dressez l'inventaire des plaisirs simples qui vous procurent bien-être et détente rien que pour vous ou à offrir avec une carte cadeau personnalisé. 
                             À bientôt 
                             Zen journée
-                            Résônance EB.ZEN</p>   
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </section>
-</div>    
+                            Résônance EB.ZEN</p>
+  </div>
+</div>
+
+</div>
+</div>
