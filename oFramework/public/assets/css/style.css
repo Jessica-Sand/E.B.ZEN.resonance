@@ -250,3 +250,10 @@ footer {
     background-color: #6eabdc;
     color: #dee2e6;
   }
+
+  /** BLOG **/
+
+  /* changing aside size */
+  @media screen and (max-width: 991px) {
+    aside { display: none; };
+} 
