@@ -13,6 +13,15 @@ class Theme extends  \oFramework\Models\CoreModel {
     }
 
     public static function findAll() {
+        $pdo = Database::getPDO();
+
+        $sql = 'SELECT *
+            FROM theme';
+        $pdoStatement = $pdo->query($sql);
+
+        $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'App\Models\Theme');
+
+        return $results;
     }
 
     protected function insert() {

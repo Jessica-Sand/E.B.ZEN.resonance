@@ -23,7 +23,10 @@ class BlogController extends CoreController
      */
     public function list() 
     {
-       $this->show('blog/list');
+       $this->show('blog/list', [
+          'themes' => Theme::findAll(),
+          'articles' => Article::findAll()
+       ]);
     }
 
     /**
