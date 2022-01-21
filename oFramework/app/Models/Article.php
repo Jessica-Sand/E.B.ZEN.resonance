@@ -13,6 +13,21 @@ class Article extends  \oFramework\Models\CoreModel {
     protected $content;
     protected $picture;
 
+    /**
+     * Method to find the 5 last article published
+     */
+    public function fiveLastArticle() {
+        // $pdo = Database::getPDO();
+
+        // $sql = '';
+
+        // $pdoStatement = $pdo->query($sql);
+
+        // $article = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'App\Models\Blog');
+
+        // return $article;
+    }
+
     public static function find($id) {
     }
 

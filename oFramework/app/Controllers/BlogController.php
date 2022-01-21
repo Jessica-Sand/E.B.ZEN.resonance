@@ -8,8 +8,16 @@ use oFramework\Controllers\CoreController;
 
 class BlogController extends CoreController
 {
+   /**
+     * Method to show the list of the 5 last article published on the blog
+     */
+    public function last()
+    {
+        $this->show('blog/list');
+    }
+
     /**
-     * Method to show the list of the blog article
+     * Method to show the list of the article from the same category
      *
      * @return void
      */
@@ -19,7 +27,7 @@ class BlogController extends CoreController
     }
 
     /**
-     * Method to show the article
+     * Method to show detail of an article
      *
      * @return void
      */
