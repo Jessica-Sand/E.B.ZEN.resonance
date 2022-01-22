@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Treatment;
+use App\Models\Category;
 use oFramework\Controllers\CoreController;
 
 class ServiceController extends CoreController
@@ -28,7 +29,9 @@ class ServiceController extends CoreController
     public function add() 
     {
         
-        $this->show('admin/service/add');
+        $this->show('admin/service/add', [
+            'categories' => Category::findAll()
+        ]);
     }
 
     /**
@@ -77,6 +80,7 @@ class ServiceController extends CoreController
         $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 
         $treatment = Treatment::find($id);
+        // $categories = Category::findAllByTreatmentId($id);
 
         $treatment->setName($name);
         $treatment->setDescription($description);

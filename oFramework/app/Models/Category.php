@@ -120,8 +120,32 @@ class Category extends  \oFramework\Models\CoreModel {
         return $deletedRow;
     }
 
-    public function jSonSerialize() {
-        // TODO
+    /**
+     * Method to recover all the category associat the the treatment with the ID equals to $treatmentId
+     *
+     * @return void
+     */
+    public static function findAllByTreatmentId($treatmentId) {
+        // 1)
+        $pdo = Database::getPDO();
+
+        // 2) On prépare la requete SQL
+        $sql = 'SELECT category_id, category.title
+                FROM treatment_category
+                INNER JOIN category ON category.id = treatment_category.category_id
+                WHERE treatment_id = :treatment_id
+        ';
+
+        // 3) On prépare pour éviter toute injection sql
+        $pdoStatement = $pdo->prepare($sql);
+
+        // 4) On execute la requete
+        $pdoStatement->execute([
+            ':treatment_id' => $treatmentId
+        ]);
+
+        // 5) On Retourne le résultat de la requete
+        return $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
     }
 
     // GETTERS
