@@ -27,16 +27,17 @@
 							<div class="col-md-4">
                         <img src="<?=$assetsBaseUri ?>images/<?= $article->getPicture() ?>" class="img-fluid" alt="...">
                         </div>
-							<div class="col-md-8">
+							<div class="col-md-8 pb-2">
 								<div class="card-body">
 									<p class="infos">
 										<time datetime="2021-01-14">14/01/2021</time> 
-										<span class="badge bg-info text-dark">Info</span>
+										<span class="badge bg-info text-dark"><?= $article->getName() ?></span>
 									</p>
-									<h3 class="card-title"><a href="article.html"><?= $article->getTitle() ?></a></h3>
-									<p class="card-text"><?= $article->getContent() ?></p>   
-								</div>
-							</div>
+									<h3 class="card-title"><?= $article->getTitle() ?></h3>
+                                    <p class="card-text" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><?= $article->getContent() ?></p>
+                                    <button type="button" class="btn btn-primary btn-sm text-end">Lire l'article</button>
+                                </div>
+                            </div>
 						</div>
                     </article>
                     <?php endforeach; ?>      

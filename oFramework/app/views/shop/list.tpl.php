@@ -29,7 +29,7 @@
                 <div class="product col-xl-3 col-lg-4 col-sm-6 mb-5 pt-2">
                     <div class="product-image">
                         <a href="<?= $router->generate('shop-details', ['id'=> $product->getId()]) ?>" class="product-hover-overlay-link">
-                            <img src="<?=$assetsBaseUri ?>images/<?= $product->getPicture() ?>" alt="product" class="img-fluid">
+                            <img src="<?=$assetsBaseUri ?>images/<?= $product->getPicture() ?>" alt="product" class="img-fluid" id="img-fluid">
                         </a>
                     </div>
                     <div class="product-action-buttons mt-2">
