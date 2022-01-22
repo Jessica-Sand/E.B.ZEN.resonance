@@ -25,7 +25,8 @@ class BlogController extends CoreController
     {
        $this->show('blog/list', [
           'themes' => Theme::findAll(),
-          'articles' => Article::findAll()
+          'articles' => Article::findAll(),
+          'theme' => Theme::findThemeForArticle()
        ]);
     }
 

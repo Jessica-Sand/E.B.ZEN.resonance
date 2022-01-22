@@ -35,6 +35,28 @@ class Theme extends  \oFramework\Models\CoreModel {
     }
 
     /**
+     * Method to recover the theme associat to the articles
+     *
+     * @return void
+     */
+    public static function findThemeForArticle() {
+        // 1)
+        $pdo = Database::getPDO();
+
+        // 2) On prépare la requete SQL
+        $sql = 'SELECT theme_id, theme.name
+            FROM article_theme
+            INNER JOIN theme ON theme.id = article_theme.theme_id
+            ';
+
+            $pdoStatement = $pdo->query($sql);
+
+            $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'App\Models\Product');
+
+            return $results;
+    }
+
+    /**
      * Get the value of name
      */ 
     public function getName()
