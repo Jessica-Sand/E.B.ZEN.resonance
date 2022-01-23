@@ -2,8 +2,9 @@
 <div class="container">
     <div class="card text-center border-0 meeting">
         <div class="card-header bg-light" id="top">
-            <h1>Devenez acteur de votre vie <br />
-                et de votre mieux être !</h1>
+            <h1 id="home_title">Cabinet de réflexologie pluridisciplinaire</h1>
+            <h2>" Devenez acteur de votre vie <br />
+                et de votre mieux être ! "</h2>
         </div>
         <div class="card-body mt-4 mb-4">
             <i class="fas fa-map-marker-alt fa-2x"></i>

@@ -8,25 +8,36 @@ use oFramework\Controllers\CoreController;
 
 class BlogController extends CoreController
 {
-   /**
-     * Method to show the list of the 5 last article published on the blog
-     */
-    public function last()
-    {
-        $this->show('blog/list');
-    }
-
     /**
-     * Method to show the list of the article from the same category
+     * Method to show the list of the 5 last article published
      *
      * @return void
      */
     public function list() 
     {
        $this->show('blog/list', [
+          'articles' => Article::fiveLastArticle(),
+
+          // aside part
           'themes' => Theme::findAll(),
-          'articles' => Article::findAll(),
-          'theme' => Theme::findThemeForArticle()
+       ]);
+    }
+
+    /**
+     * Method to show the list of the article from the same theme
+     *
+     * @return void
+     */
+    public function theme($id) 
+    {
+       $this->show('blog/article/theme', [
+         // 'theme' => Theme::findThemeForArticle(),
+         'theme' =>Theme::find($id),
+         'articles' => Article::findAllByDetail($id),
+
+
+         // aside part
+         'themes' => Theme::findAll()
        ]);
     }
 
@@ -35,8 +46,38 @@ class BlogController extends CoreController
      *
      * @return void
      */
-    public function details() 
+    public function details($id) 
     {
-       $this->show('blog/details');
+       $this->show('blog/article/details', [
+          'article' => Article::find($id),
+
+          // aside part
+          'themes' => Theme::findAll(),
+       ]);
     }
+
+    /**
+     * Method for the searching bar aside
+     *
+     * @return void
+     */
+    public function search($title) 
+    {
+       $this->show('partials/aside', [
+          'article' => Article::findSearchByTitle($title)
+       ]);
+    }
+
+    /**
+     * Method to show the list of the article in the backoffice
+     *
+     * @return void
+     */
+    public function admin() 
+    {
+        $this->show('admin/blog/list', [
+            'article' => Article::findAll()
+        ]);
+    }
+
 }

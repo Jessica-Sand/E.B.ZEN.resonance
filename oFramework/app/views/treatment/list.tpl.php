@@ -11,7 +11,7 @@
                 </li>
                 <li class="breadcrumb-item active">Liste des soins</li>
             </ol>
-            <h2>Soins</h2>
+            <h1 id="list_title">Les différents soins pratiqués</h1>
         </div>
     </div>
 

@@ -15,6 +15,7 @@
                     </a>
                 </li>
              </ol>
+             <h1 id="treatment_title">Produit - <?= $product->getName() ?></h1>
          </div>
      </div>
 

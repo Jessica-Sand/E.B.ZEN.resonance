@@ -21,7 +21,7 @@ class TreatmentController extends CoreController
     }
 
     /**
-     * Method for the detail of the category treatment 'reflexologie'
+     * Method for the detail of the category treatment
      */
     public function treatment($id)
     {

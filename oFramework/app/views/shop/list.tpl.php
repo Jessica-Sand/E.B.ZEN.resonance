@@ -11,7 +11,7 @@
                 </li>
                 <li class="breadcrumb-item active">Boutique</li>
             </ol>
-            <h2>Liste des produits</h2>
+            <h1 id="list_title">Liste des produits vendu en boutique</h1>
         </div>
     </div>
 

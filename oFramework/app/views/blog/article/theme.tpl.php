@@ -11,7 +11,7 @@
                 </li>
                 <li class="breadcrumb-item active">Blog</li>
             </ol>
-            <h1 id="list_title">Liste des 5 derniers articles publiés</h1>
+            <h1 id="list_title">Liste des articles du thème - <?= $theme->getName() ?></h1>
         </div>
     </div>
 
@@ -35,7 +35,7 @@
 									</p>
 									<h3 class="card-title"><?= $article->getTitle() ?></h3>
                                     <p class="card-text" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><?= $article->getContent() ?></p>
-                                    <a href="<?= $router->generate('blog-details', ['id'=> $article->getId()]) ?>" class="btn btn-primary btn-sm text-end">Lire l'article</a>
+                                    <button type="button" class="btn btn-primary btn-sm text-end">Lire l'article</button>
                                 </div>
                             </div>
 						</div>
@@ -45,7 +45,7 @@
                 
                 <!-- Aside category list section -->
 				<?php
-                include __DIR__.'/../partials/aside.tpl.php';
+                include __DIR__.'/../../partials/aside.tpl.php';
                 ?>
 			</div>
 		</div>

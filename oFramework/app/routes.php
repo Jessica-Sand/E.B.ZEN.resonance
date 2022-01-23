@@ -95,18 +95,28 @@ $this->addRoute(
 // Route for the blog pages
 $this->addRoute(
     'GET',
-    '/blog/list',
+    '/blog',
     'BlogController',
     'list',
     'blog-list'
 );
 $this->addRoute(
     'GET',
-    '/blog/details',
+    '/blog/article/[i:id]',
     'BlogController',
     'details',
     'blog-details'
 );
+$this->addRoute(
+    'GET',
+    '/blog/theme/[i:id]',
+    'BlogController',
+    'theme',
+    'blog-theme'
+);
+
+// Route for the aside searching bar
+
 
 // Admin routes
 
@@ -289,4 +299,13 @@ $this->addRoute(
     'UserController', // Controller name
     'list', // Method name
     'admin-list' // => route's name (for URL generation)
+);
+
+// Route for the article og the blog
+$this->addRoute(
+    'GET',
+    '/admin/blog/list',
+    'BlogController',
+    'admin',
+    'admin-blog'
 );

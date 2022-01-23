@@ -22,6 +22,9 @@
                 <li class="nav-item">
                     <a class="nav-link<?= $currentPage == 'admin/product/list' ? ' active' : '' ?>" href="<?= $router->generate('product-list') ?>">Produits</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link<?= $currentPage == 'admin/blog/list' ? ' active' : '' ?>" href="<?= $router->generate('blog-list') ?>">Blog</a>
+                </li>
                 <?php if(isset($currentUser)) : ?>
                 <!-- Si on est connecté : on affiche un menu déroulant avec le nom de la personne connectée -->
                 <li class="nav-item dropdown">

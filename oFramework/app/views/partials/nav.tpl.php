@@ -25,6 +25,11 @@
                     Boutique
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link<?= $currentPage == 'blog' ? ' active' : '' ?>" href="<?= $router->generate('blog-list') ?>">
+                    Blog
+                    </a>
+                </li>
                 
             </ul>
         </div>

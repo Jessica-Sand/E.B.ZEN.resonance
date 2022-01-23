@@ -18,6 +18,7 @@
                         <?= $category->getTitle() ?>
                     </li>
                 </ol>
+                <h1 id="treatment_title">Soins - <?= $category->getTitle() ?></h1>
             </div>
         </div>
 

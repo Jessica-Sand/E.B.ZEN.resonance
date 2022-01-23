@@ -10,6 +10,17 @@ class Theme extends  \oFramework\Models\CoreModel {
     protected $name;
     
     public static function find($id) {
+        $pdo = Database::getPDO();
+
+        $sql = ' SELECT *
+            FROM theme
+            WHERE id = ' . $id;
+
+        $pdoStatement = $pdo->query($sql);
+
+        $result = $pdoStatement->fetchObject('App\Models\Theme');
+
+        return $result;
     }
 
     public static function findAll() {
