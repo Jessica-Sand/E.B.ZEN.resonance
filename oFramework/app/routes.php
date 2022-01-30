@@ -38,8 +38,8 @@ $this->addRoute(
     'GET',
     '/soins',
     'TreatmentController',
-    'category',
-    'treatment-category'
+    'list',
+    'treatment-list'
 );
 
 /**
@@ -76,22 +76,6 @@ $this->addRoute(
     'shop-cart'
 );
 
-// Route for login
-$this->addRoute(
-    'GET', // HTTP Method
-    '/admin', // URL pattern
-    'UserController', // Controller name
-    'login', // Method name
-    'user-login' // => route's name (for URL generation)
-);
-$this->addRoute(
-    'POST', // HTTP Method
-    '/login', // URL pattern
-    'UserController', // Controller name
-    'doLogin', // Method name
-    'user-dologin' // => route's name (for URL generation)
-);
-
 // Route for the blog pages
 $this->addRoute(
     'GET',
@@ -124,7 +108,7 @@ $this->addRoute(
 $this->addRoute(
     'GET', // HTTP Method
     '/admin/home', // URL pattern
-    'AdminController', // Controller name
+    'Admin\AdminController', // Controller name
     'home', // Method name
     'admin-home' // => route's name (for URL generation)
 );
@@ -133,7 +117,7 @@ $this->addRoute(
 $this->addRoute(
     'GET', // HTTP Method
     '/admin/category/list', // URL pattern
-    'CategoryController', // Controller name
+    'Admin\CategoryController', // Controller name
     'list', // Method name
     'category-list' // => route's name (for URL generation)
 );
@@ -141,14 +125,14 @@ $this->addRoute(
 $this->addRoute(
     'GET',
     '/admin/category/add',
-    'CategoryController',
+    'Admin\CategoryController',
     'add',
     'category-add'
 );
 $this->addRoute(
     'POST',
     '/admin/category/add',
-    'CategoryController',
+    'Admin\CategoryController',
     'create',
     'category-create'
 );
@@ -157,14 +141,14 @@ $this->addRoute(
 $this->addRoute(
     'GET',
     '/admin/category/edit/[i:id]',
-    'CategoryController',
+    'Admin\CategoryController',
     'edit',
     'category-edit'
 );
 $this->addRoute(
     'POST',
     '/admin/category/edit/[i:id]',
-    'CategoryController',
+    'Admin\CategoryController',
     'update',
     'category-update'
 );
@@ -172,7 +156,7 @@ $this->addRoute(
 $this->addRoute(
     'GET',
     '/admin/category/delete/[i:id]',
-    'CategoryController',
+    'Admin\CategoryController',
     'delete',
     'category-delete'
 );
@@ -227,42 +211,42 @@ $this->addRoute(
 $this->addRoute(
     'GET', // HTTP Method
     '/admin/product/list', // URL pattern
-    'ProductController', // Controller name
+    'Admin\ProductController', // Controller name
     'list', // Method name
     'product-list' // => route's name (for URL generation)
 );
 $this->addRoute(
     'GET',
     '/admin/product/add',
-    'ProductController',
+    'Admin\ProductController',
     'add',
     'product-add'
 );
 $this->addRoute(
     'POST',
     '/admin/product/add',
-    'ProductController',
+    'Admin\ProductController',
     'create',
     'product-create'
 );
 $this->addRoute(
     'GET',
     '/admin/product/edit/[i:id]',
-    'ProductController',
+    'Admin\ProductController',
     'edit',
     'product-edit'
 );
 $this->addRoute(
     'POST',
     '/admin/product/edit/[i:id]',
-    'ProductController',
+    'Admin\ProductController',
     'update',
     'product-update'
 );
 $this->addRoute(
     'GET',
     '/admin/product/delete/[i:id]',
-    'ProductController',
+    'Admin\ProductController',
     'delete',
     'product-delete'
 );
@@ -270,17 +254,24 @@ $this->addRoute(
 // Route for login
 $this->addRoute(
     'GET', // HTTP Method
-    '/admin/admin', // URL pattern
-    'Admin/UserController', // Controller name
+    '/admin/login', // URL pattern
+    'UserController', // Controller name
     'login', // Method name
-    'admin-login' // => route's name (for URL generation)
+    'user-login' // => route's name (for URL generation)
 );
 $this->addRoute(
     'POST', // HTTP Method
     '/admin/login', // URL pattern
     'UserController', // Controller name
     'doLogin', // Method name
-    'admin-dologin' // => route's name (for URL generation)
+    'user-dologin' // => route's name (for URL generation)
+);
+$this->addRoute(
+    'GET',
+    '/admin/logout',
+    'UserController',
+    'logout',
+    'user-logout'
 );
 
 // Route for new user
@@ -289,16 +280,23 @@ $this->addRoute(
     '/admin/user/add', // URL pattern
     'UserController', // Controller name
     'add', // Method name
-    'admin-add' // => route's name (for URL generation)
+    'user-add' // => route's name (for URL generation)
+);
+$this->addRoute(
+    'POST',
+    '/admin/user/add',
+    'UserController',
+    'create',
+    'user-create'
 );
 
 // Route for admin list
 $this->addRoute(
-    'POST', //HTTP Method
+    'GET', //HTTP Method
     '/admin/user/list', // URL pattern
     'UserController', // Controller name
     'list', // Method name
-    'admin-list' // => route's name (for URL generation)
+    'user-list' // => route's name (for URL generation)
 );
 
 // Route for the article og the blog

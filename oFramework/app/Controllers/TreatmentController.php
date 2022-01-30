@@ -13,7 +13,7 @@ class TreatmentController extends CoreController
      * Method for the list of the treatment categories
      *
      */
-    public function category()
+    public function list()
     {
         $this->show('treatment/list', [
             'categories' => Category::findAll()

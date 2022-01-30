@@ -79,7 +79,7 @@ class UserController extends CoreController
         unset($_SESSION['userObject']);
         unset($_SESSION['isConnected']);
 
-        header('Location: /admin/');
+        header('Location: /admin/home');
         exit;
     }
 

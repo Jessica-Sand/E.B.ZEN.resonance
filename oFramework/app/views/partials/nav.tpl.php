@@ -16,7 +16,7 @@
                     <a class="nav-link<?= $currentPage == 'main/home' ? ' active' : '' ?>" aria-current="page" href="<?= $router->generate('main-home') ?>">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link<?= $currentPage == 'treatment/list' ? ' active' : '' ?>" href="<?= $router->generate('treatment-category') ?>">
+                    <a class="nav-link<?= $currentPage == 'treatment/list' ? ' active' : '' ?>" href="<?= $router->generate('treatment-list') ?>">
                         Soins
                     </a>      
                 </li>

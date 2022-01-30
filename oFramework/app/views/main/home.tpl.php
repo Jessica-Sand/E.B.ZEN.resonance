@@ -51,7 +51,7 @@
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5">
             <div class="col">
-                <a href="<?= $router->generate('treatment-category') ?>">
+                <a href="<?= $router->generate('treatment-list') ?>">
                     <div class="card border-0">
                         <div class="card-body">
                             <h5 class="card-title text-center">réfléxologie</h5>
@@ -62,7 +62,7 @@
             </div>
 
             <div class="col">
-                <a href="<?= $router->generate('treatment-category') ?>">
+                <a href="<?= $router->generate('treatment-list') ?>">
                     <div class="card border-0">
                         <div class="card-body">
                             <h5 class="card-title text-center">fleurs de bach</h5>
@@ -73,7 +73,7 @@
             </div>
 
             <div class="col">
-                <a href="<?= $router->generate('treatment-category') ?>">
+                <a href="<?= $router->generate('treatment-list') ?>">
                     <div class="card border-0">
                         <div class="card-body">
                             <h5 class="card-title text-center">aromathérapie</h5>

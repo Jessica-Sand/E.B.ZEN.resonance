@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
 
 use oFramework\Controllers\CoreController;
 
@@ -14,9 +14,15 @@ class AdminController extends CoreController
      */
     public function home()
     {
+        $this->checkAuthorization(['admin']);
+
+        $token = bin2hex(random_bytes(32));
+        $_SESSION['token'] = $token;
+
         $this->show('admin/home', [
             'categories' => Category::findAll(),
-            'products' => Product::findAll()
+            'products' => Product::findAll(),
+            'token' => $token
         ]);
     }
 }

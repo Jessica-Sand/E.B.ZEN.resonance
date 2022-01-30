@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="<?= $router->generate('admin-home') ?>">
             <img src="<?=$assetsBaseUri ?>images/logo.png" alt="logo" width="100">

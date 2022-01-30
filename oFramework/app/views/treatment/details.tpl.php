@@ -10,7 +10,7 @@
                         </a>
                     </li>
                     <li class="breadcrumb-item active">
-                        <a href="<?= $router->generate('treatment-category') ?>">
+                        <a href="<?= $router->generate('treatment-list') ?>">
                         Liste des soins
                         </a>
                     </li>

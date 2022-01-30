@@ -1,12 +1,12 @@
 <?php 
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
 
 use App\Models\Treatment;
 use App\Models\Category;
 use oFramework\Controllers\CoreController;
 
-class ServiceController extends CoreController
+class TreatmentController extends CoreController
 {
     /**
      * Method to show the list of the treatement
@@ -16,7 +16,7 @@ class ServiceController extends CoreController
     public function list() 
     {
 
-        $this->show('admin/service/list', [
+        $this->show('admin/treatment/list', [
             'treatments' => Treatment::findAll()
         ]);
     }
@@ -29,7 +29,7 @@ class ServiceController extends CoreController
     public function add() 
     {
         
-        $this->show('admin/service/add', [
+        $this->show('admin/treatment/add', [
             'categories' => Category::findAll()
         ]);
     }
@@ -61,7 +61,7 @@ class ServiceController extends CoreController
 
         if ($inserted === true) {
             $this->addFlashInfo("Le soin {$treatment->getName()} à bien été créée");
-            header('Location: /admin/service/list');
+            header('Location: /admin/treatment/list');
         } else {
             $this->addFlashError('Erreur durant l\'ajout');
         }   
@@ -93,7 +93,7 @@ class ServiceController extends CoreController
 
         if ($updated == true) {
             global $router;
-            header('Location: /admin/service/list');
+            header('Location: /admin/treatment/list');
             $this->addFlashInfo("Le soin {$treatment->getName()} à bien été mis à jour");
         } else {
             $this->addFlashError(('Erreur durant la mise à jour du soin'));
@@ -107,7 +107,7 @@ class ServiceController extends CoreController
      */
     public function edit($id) 
     {
-        $this->show('admin/service/edit', [
+        $this->show('admin/treatment/edit', [
             'treatment' => Treatment::find($id)
         ]);
     }
@@ -123,7 +123,7 @@ class ServiceController extends CoreController
 
         if ($deleted === true) {
             global $router;
-            header('Location: /admin/service/list');
+            header('Location: /admin/treatment/list');
             $this->addFlashInfo("Le soin {$treatment->getName()} à bien été supprimé");
         } else {
             $this->addFlashError('Erreur durant la suppression du soin');

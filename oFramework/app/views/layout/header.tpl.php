@@ -26,6 +26,11 @@
 
 <?php
 
-include __DIR__.'/../partials/nav.tpl.php';
+if (isset($currentUser)) {
+    include __DIR__.'/../admin/partials/nav.tpl.php';
+} else {
+    include __DIR__.'/../partials/nav.tpl.php';
+}
+
 include __DIR__.'/../partials/flash.tpl.php';
 ?>

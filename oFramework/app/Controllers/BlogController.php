@@ -67,17 +67,4 @@ class BlogController extends CoreController
           'article' => Article::findSearchByTitle($title)
        ]);
     }
-
-    /**
-     * Method to show the list of the article in the backoffice
-     *
-     * @return void
-     */
-    public function admin() 
-    {
-        $this->show('admin/blog/list', [
-            'article' => Article::findAll()
-        ]);
-    }
-
 }

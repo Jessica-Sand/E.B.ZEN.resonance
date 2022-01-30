@@ -147,37 +147,33 @@ abstract class CoreController
      */
     public function checkAuthorization($roles)
     {
-        // On vérifie Si le user connecté
+        // Check if the user is connected
         if (isset($_SESSION['isConnected'])) {
-            // On récupère les données de l'utilisateur connecté (Session)
+            // Recover the data of the user who is connected (Session)
             $currentUser = $_SESSION['userObject'];
 
-            // Ensuite on peut vérifier si son role correspond à celui
-            // présent dans le tableau $roles
+            // Then we check if his role is the same as $roles
 
-            // On récupère le role de l'utilisateur
+            // Recover the role of the user
             $userRole = $currentUser->getRole();
 
-            // On compare le role de l'utilisateur à celui présent dans $role
-            // Si le rôle de l'utilisateur courant fait partie
-            // des rôles autorisés ($roles)
-            // Doc PHP de in_array : https://www.php.net/manual/fr/function.in-array.php
+            // Compare if the user role is the same as in $role
+            // If the current user's role is one of the of the authorized roles ($roles)
+            // PHP doc in_array : https://www.php.net/manual/fr/function.in-array.php
             if (in_array($userRole, $roles)) {
-                // alors on retourne vrai
+                // the we return true
                 return true;
             } else {
-                // Si le rôle de l'utilisateur ne lui permet d'effectuer
-                // l'action courant 
-                // On retourne une page 403
-                // Puis on gère l'affichage
+                // If the user's role does not allow him to perform the current action
+                // a 403 page is returned and the display is managed
                 http_response_code(403);
                 $this->show('error/err403');
 
-                // On stoppe l'execution du script PHP : on arrete TOUT
+                // We stop the execution of the PHP script : we stop ALL
                 exit;
             }
         } else {
-            // Si non connecté...on redirige vers le formulaire de connexion
+            // If not connected...redirection to the connection form
             header('Location: ' . $this->router->generate('user-login'));
             exit;
         }
@@ -224,8 +220,18 @@ abstract class CoreController
         }
 
         // $viewVars est disponible dans chaque fichier de vue
+        
+            // require_once __DIR__ . '/../views/admin/layout/header.tpl.php';
+
+        // } else {
+        //     require_once __DIR__ . '/../views/layout/header.tpl.php';
+        //     require_once __DIR__ . '/../views/' . $viewName . '.tpl.php';
+        // require_once __DIR__ . '/../views/layout/footer.tpl.php';
+        
         require_once __DIR__ . '/../views/layout/header.tpl.php';
         require_once __DIR__ . '/../views/' . $viewName . '.tpl.php';
         require_once __DIR__ . '/../views/layout/footer.tpl.php';
     }
+    
+    
 }
