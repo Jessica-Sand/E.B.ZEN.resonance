@@ -51,6 +51,25 @@ class Product extends  \oFramework\Models\CoreModel {
     }
 
     /**
+     * Method to return the 5 last treatment added
+     * 
+     * @return void
+     */
+    public static function findFiveLastProducts() {
+        $pdo = Database::getPDO();
+
+        $sql = 'SELECT name
+                From product
+                LIMIT 5';
+
+        $pdoStatement = $pdo->query($sql);
+
+        $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS,'App\Models\Product');
+ 
+        return $results;
+    }
+
+    /**
      * Method to save a new object in the table product
      *
      * @return bool
@@ -90,7 +109,7 @@ class Product extends  \oFramework\Models\CoreModel {
                 SET name = :name,
                     description = :description,
                     subtitle = :subtitle,
-                    picture = :picture,
+                    -- picture = :picture,
                     content = :content,
                     price = :price,
                     updated_at = NOW()
@@ -103,7 +122,7 @@ class Product extends  \oFramework\Models\CoreModel {
             ':name' => $this->name,
             ':description' => $this->description,
             ':subtitle' => $this->subtitle,
-            ':picture' => $this->picture,
+            // ':picture' => $this->picture,
             ':content' => $this->content,
             ':price' => $this->price,
             ':id' => $this->id

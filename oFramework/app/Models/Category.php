@@ -84,7 +84,7 @@ class Category extends  \oFramework\Models\CoreModel {
         $sql = "UPDATE `category`
                 SET title = :title,
                     description = :description,
-                    picture = :picture,
+                    -- picture = :picture,
                     updated_at = NOW()
                 WHERE id = :id
                 ";
@@ -94,7 +94,7 @@ class Category extends  \oFramework\Models\CoreModel {
         $updatedRow = $pdoStatement->execute([
             ':title' => $this->title,
             ':description' => $this->description,
-            ':picture' => $this->picture,
+            // ':picture' => $this->picture,
             ':id' => $this->id
         ]);
 

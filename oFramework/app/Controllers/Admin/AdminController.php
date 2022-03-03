@@ -4,7 +4,7 @@ namespace App\Controllers\Admin;
 
 use oFramework\Controllers\CoreController;
 
-use App\Models\Category;
+use App\Models\Treatment;
 use App\Models\Product;
 
 class AdminController extends CoreController
@@ -14,14 +14,14 @@ class AdminController extends CoreController
      */
     public function home()
     {
-        $this->checkAuthorization(['admin']);
+        $this->checkAuthorization(['admin', 'catalog-manager']);
 
         $token = bin2hex(random_bytes(32));
         $_SESSION['token'] = $token;
 
         $this->show('admin/home', [
-            'categories' => Category::findAll(),
-            'products' => Product::findAll(),
+            'treatments' => Treatment::findFiveLastTreatments(),
+            'products' => Product::findFiveLastProducts(),
             'token' => $token
         ]);
     }

@@ -1,7 +1,7 @@
 <div class="bg-light p-4">
     <div class="container">
         <div class="card border-0 meeting">
-            <div class="card-header text-center bg-light">
+            <div class="card-header text-center bg-light p-3">
                 <h2>Ajouter un soin</h2>
             </div>
         </div>
@@ -44,13 +44,9 @@
             <div class="form-group mb-3">
                 <label for="type">Catégorie</label>
                 <select class="custom-select" id="service" name="category_id" aria-describedby="typeHelpBlock">
-                    <option value="1">Réflexologie</option>
-                    <option value="2">Points de KNAP</option>
-                    <option value="3">Fleurs de Bach</option>
-                    <option value="4">Séance de magnétisme</option>
-                    <option value="5">Les formules Zen</option>
-                    <option value="6">Aromathérapie</option>
-                    <option value="7">L'escale</option>
+                <?php foreach($categories as $category): ?>
+                    <option value="<?= $category->getId() ?>"><?= $category->getTitle() ?></option>
+                    <?php endforeach; ?>
                 </select>
                 <small id="typeHelpBlock" class="form-text text-info">
                     La catégorie du soin

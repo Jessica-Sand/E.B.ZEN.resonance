@@ -26,7 +26,12 @@ class UserController extends CoreController
      */
     public function list()
     {
-        $this->show('admin/user/list');
+        // This page is only accessible for the admin
+        $this->checkAuthorization(['admin']);
+
+        $this->show('admin/user/list', [
+            'users' => AppUser::findAll()
+        ]);
     }
 
     public function doLogin()
@@ -90,8 +95,11 @@ class UserController extends CoreController
      */
     public function add()
     {
+        // This page is only accessible for the admin
+        $this->checkAuthorization(['admin']);
+
         // 1) We generate a unique code
-        // $token = $this->generateToken();
+        $token = $this->generateToken();
 
         // 3) We send the code to the user (in the secured formular)
         // views/user/add.tpl.php
@@ -106,7 +114,7 @@ class UserController extends CoreController
     public function create()
     {
         // This page is only accessible for the admin
-        // $this->checkAuthorization(['admin']);
+        $this->checkAuthorization(['admin']);
 
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
         $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING);
@@ -161,5 +169,54 @@ class UserController extends CoreController
 
             $this->redirect('admin-add');
         }
+    }
+
+    /**
+     * Method to edit a user
+     */
+    public function update($id) 
+    {
+        // This page is only accessible for the admin
+        $this->checkAuthorization(['admin']);
+        
+        $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+        $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING);
+        $lastname = filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_STRING);
+        $role = filter_input(INPUT_POST, 'role', FILTER_SANITIZE_STRING);
+        $status = filter_input(INPUT_POST, 'status', FILTER_VALIDATE_INT);
+        $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+
+        $user = AppUser::find($id);
+        // $categories = Category::findAllByTreatmentId($id);
+
+        $user->setLastname($lastname);
+        $user->setFirstname($firstname);
+        $user->setRole($role);
+        $user->setStatus($status);
+
+        $updated = $user->save();
+
+        if ($updated == true) {
+            global $router;
+            header('Location: /admin/user/list');
+            $this->addFlashInfo("L'utilisateur {$user->getFirstname()}{$user->getLastname()} à bien été mis à jour");
+        } else {
+            $this->addFlashError(('Erreur durant la mise à jour de l\'utilisateur'));
+        }
+    }
+
+    /**
+     * Method to show the formular to edit a user
+     *
+     * @return void
+     */
+    public function edit($id) 
+    {
+        // This page is only accessible for the admin
+        $this->checkAuthorization(['admin']);
+
+        $this->show('admin/user/edit', [
+            'user' => AppUser::find($id)
+        ]);
     }
 }

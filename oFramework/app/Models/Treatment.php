@@ -72,6 +72,25 @@ class Treatment extends \oFramework\Models\CoreModel {
     }
 
     /**
+     * Method to return the 5 last treatment added
+     * 
+     * @return void
+     */
+    public static function findFiveLastTreatments() {
+        $pdo = Database::getPDO();
+
+        $sql = 'SELECT name
+                From treatment
+                LIMIT 5';
+
+        $pdoStatement = $pdo->query($sql);
+
+        $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS,'App\Models\Treatment');
+ 
+        return $results;
+    }
+
+    /**
      * Method to insert a new the data in the table Treatment
      */
     protected function insert() {

@@ -14,6 +14,11 @@ class CategoryController extends CoreController
      */
     public function list() 
     {
+        $this->checkAuthorization(['admin', 'catalog-manager']);
+
+        $token = bin2hex(random_bytes(32));
+        $_SESSION['token'] = $token;
+
        $this->show('admin/category/list', [
             'categories' => Category::findAll()
         ]);
@@ -26,6 +31,8 @@ class CategoryController extends CoreController
      */
     public function add() 
     {
+        $this->checkAuthorization(['admin', 'catalog-manager']);
+
         $this->show('admin/category/add');
     }
 
@@ -36,6 +43,8 @@ class CategoryController extends CoreController
      */
     public function create() 
     {
+        $this->checkAuthorization(['admin', 'catalog-manager']);
+
         // Recover the data of the formular
         $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
@@ -64,6 +73,8 @@ class CategoryController extends CoreController
      */
     public function update($id) 
     {
+        $this->checkAuthorization(['admin', 'catalog-manager']);
+        
         $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
         $picture = filter_input(INPUT_POST, 'picture');
@@ -92,6 +103,11 @@ class CategoryController extends CoreController
      */
     public function edit($id) 
     {
+        $this->checkAuthorization(['admin', 'catalog-manager']);
+
+        $token = bin2hex(random_bytes(32));
+        $_SESSION['token'] = $token;
+
         $category = Category::find($id);
 
         $this->show('admin/category/edit', [
@@ -104,6 +120,11 @@ class CategoryController extends CoreController
      */
     public function delete($id) 
     {
+        $this->checkAuthorization(['admin']);
+
+        $token = bin2hex(random_bytes(32));
+        $_SESSION['token'] = $token;
+        
         $category = Category::find($id);
 
         $deleted = $category->delete();

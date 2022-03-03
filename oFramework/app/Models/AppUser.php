@@ -80,6 +80,7 @@ class AppUser extends CoreModel
         $sql = "UPDATE `app_user`
                 SET email = :email,
                     password = :password, 
+                    lastname = :lastname, 
                     firstname = :firstname, 
                     role = :role,
                     status = :status,
@@ -96,7 +97,8 @@ class AppUser extends CoreModel
             ':email' => $this->email,
             ':password' => $this->password,
             ':firstname' => $this->firstname,
-            ':lastname' => $this->role,
+            ':lastname' => $this->lastname,
+            ':role' => $this->role,
             ':status' => $this->status,
             ':id' => $this->id,
         ]);

@@ -1,7 +1,7 @@
 <div class="bg-light p-4">
     <div class="container">
         <div class="card border-0 meeting">
-            <div class="card-header text-center bg-light">
+            <div class="card-header text-center bg-light p-3">
                 <h2>Modifier le soin 
                     <?= $treatment->getName() ?>
                 </h2>

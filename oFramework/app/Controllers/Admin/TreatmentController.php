@@ -15,8 +15,9 @@ class TreatmentController extends CoreController
      */
     public function list() 
     {
-
-        $this->show('admin/treatment/list', [
+        $this->checkAuthorization(['admin', 'catalog-manager']);
+        
+        $this->show('admin/service/list', [
             'treatments' => Treatment::findAll()
         ]);
     }
@@ -28,8 +29,9 @@ class TreatmentController extends CoreController
      */
     public function add() 
     {
-        
-        $this->show('admin/treatment/add', [
+        $this->checkAuthorization(['admin', 'catalog-manager']);
+
+        $this->show('admin/service/add', [
             'categories' => Category::findAll()
         ]);
     }
@@ -41,6 +43,8 @@ class TreatmentController extends CoreController
      */
     public function create() 
     {
+        $this->checkAuthorization(['admin', 'catalog-manager']);
+
         $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
         $subtitle = filter_input(INPUT_POST, 'subtitle', FILTER_SANITIZE_STRING);
@@ -61,7 +65,7 @@ class TreatmentController extends CoreController
 
         if ($inserted === true) {
             $this->addFlashInfo("Le soin {$treatment->getName()} à bien été créée");
-            header('Location: /admin/treatment/list');
+            header('Location: /admin/service/list');
         } else {
             $this->addFlashError('Erreur durant l\'ajout');
         }   
@@ -72,6 +76,8 @@ class TreatmentController extends CoreController
      */
     public function update($id) 
     {
+        $this->checkAuthorization(['admin', 'catalog-manager']);
+
         $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
         $subtitle = filter_input(INPUT_POST, 'subtitle', FILTER_SANITIZE_STRING);
@@ -93,7 +99,7 @@ class TreatmentController extends CoreController
 
         if ($updated == true) {
             global $router;
-            header('Location: /admin/treatment/list');
+            header('Location: /admin/service/list');
             $this->addFlashInfo("Le soin {$treatment->getName()} à bien été mis à jour");
         } else {
             $this->addFlashError(('Erreur durant la mise à jour du soin'));
@@ -107,7 +113,9 @@ class TreatmentController extends CoreController
      */
     public function edit($id) 
     {
-        $this->show('admin/treatment/edit', [
+        $this->checkAuthorization(['admin', 'catalog-manager']);
+
+        $this->show('admin/service/edit', [
             'treatment' => Treatment::find($id)
         ]);
     }
@@ -117,13 +125,15 @@ class TreatmentController extends CoreController
      */
     public function delete($id) 
     {
+        $this->checkAuthorization(['admin']);
+
         $treatment = Treatment::find($id);
 
         $deleted = $treatment->delete();
 
         if ($deleted === true) {
             global $router;
-            header('Location: /admin/treatment/list');
+            header('Location: /admin/service/list');
             $this->addFlashInfo("Le soin {$treatment->getName()} à bien été supprimé");
         } else {
             $this->addFlashError('Erreur durant la suppression du soin');

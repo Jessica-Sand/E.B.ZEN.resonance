@@ -174,7 +174,7 @@ abstract class CoreController
             }
         } else {
             // If not connected...redirection to the connection form
-            header('Location: ' . $this->router->generate('user-login'));
+            header('Location: ' . $this->router->generate('admin-login'));
             exit;
         }
     }

@@ -14,6 +14,8 @@ class ProductController extends CoreController
      */
     public function list() 
     {
+        $this->checkAuthorization(['admin', 'catalog-manager']);
+
         $this->show('admin/product/list', [
             'products' => Product::findAll()
         ]);
@@ -26,6 +28,8 @@ class ProductController extends CoreController
      */
     public function add() 
     {
+        $this->checkAuthorization(['admin', 'catalog-manager']);
+
         $this->show('admin/product/add');
     }
 
@@ -34,6 +38,8 @@ class ProductController extends CoreController
      */
     public function create() 
     {
+        $this->checkAuthorization(['admin', 'catalog-manager']);
+        
         $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
         $subtitle = filter_input(INPUT_POST, 'subtitle', FILTER_SANITIZE_STRING);
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
@@ -67,6 +73,8 @@ class ProductController extends CoreController
      */
     public function update($id) 
     {
+        $this->checkAuthorization(['admin', 'catalog-manager']);
+
         $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
         $subtitle = filter_input(INPUT_POST, 'subtitle', FILTER_SANITIZE_STRING);
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
@@ -101,6 +109,8 @@ class ProductController extends CoreController
      */
     public function edit($id) 
     {
+        $this->checkAuthorization(['admin', 'catalog-manager']);
+
         $product = Product::find($id);
 
         $this->show('admin/product/edit', [
@@ -113,6 +123,8 @@ class ProductController extends CoreController
      */
     public function delete($id) 
     {
+        $this->checkAuthorization(['admin']);
+
         $product = Product::find($id);
 
         $deleted = $product->delete();

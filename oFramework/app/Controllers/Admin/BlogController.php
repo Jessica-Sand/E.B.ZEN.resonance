@@ -15,6 +15,8 @@ class BlogController extends CoreController
      */
     public function admin() 
     {
+        $this->checkAuthorization(['admin']);
+
         $this->show('admin/blog/list', [
             'article' => Article::findAll()
         ]);
