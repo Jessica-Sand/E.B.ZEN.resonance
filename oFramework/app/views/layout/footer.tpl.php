@@ -67,11 +67,14 @@
                         Menu
                     </h6>
                     <p>
-                        <a href="#!" class="text-reset">Mentions legales</a>
+                        <a href="<?= $router->generate('main-legal') ?>" class="text-reset">Mentions legales</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Vie privée</a>
+                        <img src="<?=$assetsBaseUri ?>images/lapin.jpg" alt="photo" class="img-fluid">
                     </p>
+                    <!-- <p>
+                        <a href="#!" class="text-reset">Vie privée</a>
+                    </p> -->
                     <!-- <p>
                         <a href="#!" class="text-reset">Déposez un avis</a>
                     </p> -->

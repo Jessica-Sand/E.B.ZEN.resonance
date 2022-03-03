@@ -22,4 +22,12 @@ class MainController extends CoreController
     {
         $this->show('main/contact');
     }
+
+    /**
+     * Method for the legacy mention page
+     */
+    public function legal()
+    {
+        $this->show('main/legal');
+    }
 }

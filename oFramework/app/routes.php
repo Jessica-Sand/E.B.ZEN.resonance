@@ -99,6 +99,15 @@ $this->addRoute(
     'blog-theme'
 );
 
+// Route for the legacy termes
+$this->addRoute(
+    'GET',
+    '/main/mention-legal',
+    'MainController',
+    'legal',
+    'main-legal'
+);
+
 // Route for the aside searching bar
 
 
