@@ -123,7 +123,7 @@ class ProductController extends CoreController
      */
     public function delete($id) 
     {
-        $this->checkAuthorization(['admin']);
+        $this->checkAuthorization(['admin', 'catalog-manager']);
 
         $product = Product::find($id);
 

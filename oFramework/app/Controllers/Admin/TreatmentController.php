@@ -125,7 +125,7 @@ class TreatmentController extends CoreController
      */
     public function delete($id) 
     {
-        $this->checkAuthorization(['admin']);
+        $this->checkAuthorization(['admin', 'catalog-manager']);
 
         $treatment = Treatment::find($id);
 

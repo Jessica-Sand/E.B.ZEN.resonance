@@ -29,6 +29,14 @@ $this->addRoute(
     'contact', // Method name
     'main-contact' // => route's name (for URL generation)
 );
+// Route for contact page
+$this->addRoute(
+    'POST', // HTTP Method
+    '/contact', // URL pattern
+    'MainController', // Controller name
+    'mailSend', // Method name
+    'main-send' // => route's name (for URL generation)
+);
 
 // Route for the treatments
 /**

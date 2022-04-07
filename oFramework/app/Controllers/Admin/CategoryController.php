@@ -120,7 +120,7 @@ class CategoryController extends CoreController
      */
     public function delete($id) 
     {
-        $this->checkAuthorization(['admin']);
+        $this->checkAuthorization(['admin', 'catalog-manager']);
 
         $token = bin2hex(random_bytes(32));
         $_SESSION['token'] = $token;
