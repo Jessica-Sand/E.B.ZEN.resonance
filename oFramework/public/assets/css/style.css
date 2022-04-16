@@ -42,6 +42,15 @@ a:hover {
     color: #6eabdc;
 }
 
+/** MODAL **/
+.modal a {
+    color: #ffffff;
+  }
+#numb-shop {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
 /** HEADER **/
 
 .websitename {

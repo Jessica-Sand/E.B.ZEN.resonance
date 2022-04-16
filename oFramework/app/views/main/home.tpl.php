@@ -1,21 +1,23 @@
 <!-- Modal -->
-<!-- <div class="modal" tabindex="-1" id="myModal">
+<div class="modal fade" tabindex="-1" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
+        <h5 class="modal-title">Venez découvrir la boutique</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
+      <div class="modal-body text-center">
+        <img src="<?=$assetsBaseUri ?>images/boutique.jpg" class="img-fluid rounded" alt="boutique">
+        <p class="pt-2">Si vous êtes intéressé par un produit, <br/>n'hésitez pas à me contacter au </p>
+        <span id="numb-shop">06 70 48 52 95</span>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary"><a href="<?= $router->generate('shop-list') ?>">Aller voir la boutique</a></button>
       </div>
     </div>
   </div>
-</div> -->
+</div>
 
 <!-- Presentation and contact -->
 <div class="container">
