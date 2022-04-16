@@ -16,9 +16,16 @@
         <div class="rounded g-0 p-5 " id="contactBg">
             <div class="container-fluid">
                 <form action="" method="post">
+
+                <?php echo((!empty($errorMessage)) ? $errorMessage : '') ?>
+                
                     <div class="mb-4">
-                        <label for="name" class="form-label fw-bold">Nom</label>
-                        <input type="text" class="form-control" id="nameForm" placeholder="Votre nom">
+                        <label for="firstname" class="form-label fw-bold">Prénom</label>
+                        <input type="text" class="form-control" id="nameForm" name="firstname" placeholder="Votre prénom">
+                    </div>
+                    <div class="mb-4">
+                        <label for="lastname" class="form-label fw-bold">Nom</label>
+                        <input type="text" class="form-control" id="nameForm" name="lastname" placeholder="Votre nom">
                     </div>
                     <div class="mb-4">
                         <label for="email" class="form-label">Email</label>
@@ -38,7 +45,7 @@
                         <textarea class="form-control" id="message" name="message" rows="3" placeholder="Votre message"></textarea>
                     </div>
                     <div class="d-grid gap-2">
-                        <button class="btn btn-buy" id="buy">
+                        <button type="submit" class="btn btn-buy" id="buy">
                             <span class="btn-buy-label ml-2">
                             Envoyer
                             </span>

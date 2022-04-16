@@ -8,7 +8,7 @@
       </div>
       <div class="modal-body text-center">
         <img src="<?=$assetsBaseUri ?>images/boutique.jpg" class="img-fluid rounded" alt="boutique">
-        <p class="pt-2">Si vous êtes intéressé par un produit, <br/>n'hésitez pas à me contacter au </p>
+        <p>Si vous êtes intéressé par un produit, <br/>n'hésitez pas à me contacter au </p>
         <span id="numb-shop">06 70 48 52 95</span>
       </div>
       <div class="modal-footer">

@@ -24,27 +24,52 @@ class MainController extends CoreController
     }
 
     public function mailSend() {
+
+        $errors = [];
+        $errorMessage = '';
+
         if (!empty($_POST)) {
+            $firstname = $_POST['firstname'];
+            $lastname = $_POST['lastname'];
+            $email = $_POST['email'];
+            $message = $_POST['message'];
 
-            $userName = trim($_POST['user_nom']);
-            $userEmail = $_POST['user_mail'];
-            $userMessage = $_POST['user_message'];
-            
-            if ($userName === '') {
-                echo 'Erreur : vous devez saisir un nom';
+            if (empty($firstname)) {
+                $errors[] = 'Vous devez saisir votre prénom';
             }
-            
 
-            if (empty($userEmail)) {
-                echo 'Erreur : vous devez saisir un email';
+            if (empty($lastname)) {
+                $errors[] = 'Vous devez saisir votre nom';
             }
-            
-            echo "Bonjour " . $_POST['user_nom']. ' (' . $_POST['user_mail']. ')'. ' Nous avons bien reçu votre message : '. $_POST['user_message'];
-        } else {
-            echo 'Le formulaire est vide !';
+
+            if (empty($email)) {
+                $errors[] = 'Email is empty';
+            } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $errors[] = 'Vous devez saisir un email';
+            }
+
+            if (empty($message)) {
+                $errors[] = 'Votre message est vide';
+            }
         }
 
-        var_dump($_GET);
+        if (!empty($errors)) {
+            $toEmail = 'jessica.sand@orange.fr';
+            $emailSubject = 'New email from your contant form';
+            $headers = ['From' => $email, 'Reply-To' => $email, 'Content-type' => 'text/html; charset=iso-8859-1'];
+
+            $bodyParagraphs = ["Firstname: {$firstname}", "Lastname: {$lastname}","Email: {$email}", "Message:", $message];
+            $body = join(PHP_EOL, $bodyParagraphs);
+
+            if (mail($toEmail, $emailSubject, $body, $headers)) {
+                header('Location: thank-you.html');
+            } else {
+                $errorMessage = 'Oops, something went wrong. Please try again later';
+            }
+        } else {
+                $allErrors = join('<br/>', $errors);
+                $errorMessage = "<p style='color: red;'>{$allErrors}</p>";
+            }
     }
 
     /**

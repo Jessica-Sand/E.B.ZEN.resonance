@@ -43,7 +43,7 @@ a:hover {
 }
 
 /** MODAL **/
-.modal a {
+.modal-dialog a {
     color: #ffffff;
   }
 #numb-shop {
