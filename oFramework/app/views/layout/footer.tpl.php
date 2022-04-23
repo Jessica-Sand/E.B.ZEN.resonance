@@ -119,6 +119,10 @@
 
 <!-- Modal script -->
 <script src="<?=$assetsBaseUri ?>js/modal.js"></script>
+
+<!-- Mail erros script -->
+<script src="<?=$assetsBaseUri ?>js/mailsended.js"></script>
+
 </body>
 
 </html>

@@ -56,6 +56,12 @@
                         </div>
                     </div>
                 </div>
+                <div class="text-center mt-5">
+                    <p>Si vous êtes intéressé par un produit, <br/>n'hésitez pas à me contacter au </p>
+                    <h5>
+                        <a href="tel:06.70.48.52.95" id="numb-shop">06 70 48 52 95</a>
+                    </h5>
+                </div>
                 <!-- <div class="d-flex justify-content-end">
                     <div class="product-action-buttons">
                         <form action="" method="post">

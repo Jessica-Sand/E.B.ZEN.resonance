@@ -24,9 +24,7 @@ class MainController extends CoreController
     }
 
     public function mailSend() {
-
         $errors = [];
-        $errorMessage = '';
 
         if (!empty($_POST)) {
             $firstname = $_POST['firstname'];
@@ -44,32 +42,66 @@ class MainController extends CoreController
 
             if (empty($email)) {
                 $errors[] = 'Email is empty';
-            } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $errors[] = 'Vous devez saisir un email';
             }
 
             if (empty($message)) {
                 $errors[] = 'Votre message est vide';
             }
-        }
 
-        if (!empty($errors)) {
-            $toEmail = 'jessica.sand@orange.fr';
-            $emailSubject = 'New email from your contant form';
-            $headers = ['From' => $email, 'Reply-To' => $email, 'Content-type' => 'text/html; charset=iso-8859-1'];
+            if (empty($errors)) {
+                $to = 'contact@eb-zen-resonance.fr';
+                $from = $email;
+                $subject = 'Nouvelle demande de contact sur le site eb-zen-resonance.fr';
+                
+                // $bodyParagraphs = ["Nom de famille: {$lastname}", "Prénom: {$firstname}","Adresse mail: {$email}", "Message:", $message];
+                $bodyParagraphs = 
+                '<html>
+                    <body>
+                    <p>Vous avez un message de <strong>' . $lastname . ' ' . $firstname . '</strong></p>
+                    <p>Message : ' . $message . '</p>
+                    <p>Contactez la personne à l\'adresse suivante : <strong>' . $email . '</strong></p>
+                    </body>
+                </html>';
 
-            $bodyParagraphs = ["Firstname: {$firstname}", "Lastname: {$lastname}","Email: {$email}", "Message:", $message];
-            $body = join(PHP_EOL, $bodyParagraphs);
+                // $body = join(PHP_EOL, $bodyParagraphs);
 
-            if (mail($toEmail, $emailSubject, $body, $headers)) {
-                header('Location: thank-you.html');
+                $encoding = "utf-8";
+
+                // Preferences for Subject field
+                $subject_preferences = array(
+                    "input-charset" => $encoding,
+                    "output-charset" => $encoding,
+                    "line-length" => 76,
+                    "line-break-chars" => "\r\n"
+                );
+
+                // Mail header
+                $header = "Content-type: text/html; charset=".$encoding." \r\n";
+                $header .= "From: " . $from." <" . $from."> \r\n";
+                $header .= "MIME-Version: 1.0 \r\n";
+                $header .= "Content-Transfer-Encoding: 8bit \r\n";
+                $header .= "Date: ".date("r (T)")." \r\n";
+                $header .= iconv_mime_encode("Subject", $subject, $subject_preferences);
+
+                if (mail($to, $subject, $bodyParagraphs, $header)) {
+                    header('Location: /message-envoye');
+                } else {
+                    echo 'Oops, quelque chose c\'est mal passé. Veuillez réessayer';
+                }
             } else {
-                $errorMessage = 'Oops, something went wrong. Please try again later';
+                join('<br/>', $errors);
             }
-        } else {
-                $allErrors = join('<br/>', $errors);
-                $errorMessage = "<p style='color: red;'>{$allErrors}</p>";
-            }
+        }
+    }
+
+    /**
+     * Method to show the thank you page after contacting page
+     */
+    public function messageSend()
+    {
+        $this->show('main/send');
     }
 
     /**

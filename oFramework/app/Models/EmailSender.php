@@ -6,7 +6,7 @@ use oFramework\Utils\Database;
 use PDO;
 use Symfony\Component\VarDumper\Cloner\Data;
 
-class Contact extends  \oFramework\Models\CoreModel {
+class EmailSender extends  \oFramework\Models\CoreModel {
 
     protected $firstname;
     protected $lastname;

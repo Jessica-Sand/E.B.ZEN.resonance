@@ -1,20 +1,22 @@
 <div class="container">
     <div class="card text-center border-0 meeting">
         <div class="card-header bg-light" id="top">
-            <h1 id="list_title">404 Not Found</h1>
+            <!-- Breadcrumbs -->
+            <ol class="breadcrumb justify-content-center">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Merci</li>
+            </ol>
+            <h1 id="list_title">Message envoyé</h1>
         </div>
-    </div> 
+    </div>
 
     <div class="services py-5">
         <div class="container">
             <div class="row m-5 text-light">
                 <div>
                     <h2 class="text-light">
-                    Cette page n'existe pas...
+                        Merci de nous avoir contacté
                     </h2>
-
-                        <a class="text-light text-center" href="<?= $router->generate('main-home') ?>">retour à l'accueil</a>
-                    
                 </div>
             </div>
         </div>

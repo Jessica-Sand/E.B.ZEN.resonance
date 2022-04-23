@@ -37,6 +37,14 @@ $this->addRoute(
     'mailSend', // Method name
     'main-send' // => route's name (for URL generation)
 );
+// Route for thank you page
+$this->addRoute(
+    'GET', // HTTP Method
+    '/message-envoye', // URL pattern
+    'MainController', // Controller name
+    'messageSend', // Method name
+    'main-sended' // => route's name (for URL generation)
+);
 
 // Route for the treatments
 /**
