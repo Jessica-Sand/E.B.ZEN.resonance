@@ -11,6 +11,14 @@ body {
 @media screen and (max-width: 500px) {
 body { background-image: none; };
 }
+/** TABLET CHANGES **/
+@media screen and (max-width: 990px) {
+  #home_title h1 { font-size: 2em; };
+  h2 {font-size: 1.4em;};
+  h3 {font-size: 1.2em;};
+  #card-title h5 {font-size: 1rem; color:red;};
+  p {font-size: 0.8em;}
+  }
 
 .container { 
   padding: 0;
@@ -21,13 +29,21 @@ body { background-image: none; };
   padding: 12em 0em 2em 0em;
 }
 
-#home_title {
-text-align: center;
-background-color: #6eabdc;
-color: #fff;
-padding-top: 2em;
-padding-bottom: 2em;
+#top-home {
+  padding: 7em 0em 2em 0em;
 }
+#home_title {
+  text-align: center;
+  background-color: #6eabdc;
+  color: #fff;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+/** TABLET CHANGES **/
+@media screen and (min-width: 576px) and (max-width: 990px) {
+#home_title {font-size: 2em;};
+}
+
 #list_title, #treatment_title  {
 text-align: center;
 color: #343a40;
@@ -38,12 +54,21 @@ font-size: 1.5em;
 color: #343a40;
 margin-top: 2em;
 }
+/** TABLET CHANGES **/
+@media screen and (min-width: 576px) and (max-width: 990px) {
+h2 {font-size: 1.4em;}
+}
 
 h5 {
   color: #6eabdc;
   font-weight: 800;
   text-transform: uppercase;
 }
+/** TABLET CHANGES **/
+@media screen and (min-width: 576px) and (max-width: 990px) {
+  h5 {font-size: 1rem;};
+}
+
 a {
   text-decoration: none;
   color: #343a40;
@@ -251,9 +276,9 @@ color: #6eabdc;
 .product-image {
   overflow: hidden;
 }
-    /* changing image size */
-    @media screen and (max-width: 767px) {
-      #img-fluid { max-width: 100%; }
+  /* changing image size */
+  @media screen and (max-width: 767px) {
+    #img-fluid { max-width: 100%; }
   }
   @media screen and (min-width:768px) and (max-width: 991px) {
     #img-fluid { max-width: 90%; }

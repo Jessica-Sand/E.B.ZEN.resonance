@@ -22,7 +22,7 @@
 <!-- Presentation and contact -->
 <div class="container">
     <div class="card text-center border-0 meeting">
-        <div class="card-header bg-light" id="top">
+        <div class="card-header bg-light" id="top-home">
             <h1 id="home_title">Cabinet de réflexologie pluridisciplinaire</h1>
             <h2>" Devenez acteur de votre vie <br />
                 et de votre mieux être ! "</h2>
@@ -49,9 +49,9 @@
             </div>
             <div class="col-md-7">
                 <div class="card-body">
-                    <h5 class="card-title fs-2">Prendre soin de soi,</h5>
-                    <h5 class="card-title fs-2">avec la Réflexologie plantaire</h5>
-                    <h5 class="card-title fs-2">C'est le pied !</h5>
+                    <h5 class="home-page-title">Prendre soin de soi,<br/>
+                    avec la Réflexologie plantaire<br/>
+                    C'est le pied !</h5>
                     <p class="card-text pt-5">Cette méthode naturelle permet de soulager un mal de dos, des jambes
                         lourdes, ou encore une mauvaise circulation sanguine, troubles digestifs, fatigue,
                         insomnie,stress...</p>
@@ -70,7 +70,7 @@
 <!-- Treatments -->
 <div class="services py-5">
     <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 g-5">
             <div class="col">
                 <a href="<?= $router->generate('treatment-list') ?>">
                     <div class="card border-0">

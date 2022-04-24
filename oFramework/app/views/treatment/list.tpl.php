@@ -17,7 +17,7 @@
 
 <div class="services py-5">
     <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5 m-0">
         <?php foreach($categories as $category): ?>
             <div class="col">
                 <a href="<?= $router->generate('treatment-details', ['id' => $category->getId()]) ?>">
