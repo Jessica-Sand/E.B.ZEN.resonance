@@ -62,20 +62,28 @@
                         <a href="tel:06.70.48.52.95" id="numb-shop">06 70 48 52 95</a>
                     </h5>
                 </div>
-                <div class="d-flex justify-content-end">
+                <div class="text-center mt-5">
+                    <p>Ou demandez une réservation d'un produit via la page <a href="<?= $router->generate('main-contact') ?>"><strong>contact</strong></a></p>
+                </div>
+                <!-- <div class="d-flex justify-content-end">
                     <div class="product-action-buttons">
-                        <form action="<?= $router->generate('main-send') ?>" method="POST">
-                            <input type="hidden" name="product_id" value="1">
+                        <form action="<?= $router->generate('shop-cart') ?>" method="post">
+                            <input type="hidden" name="product_id" value="">
                             <a href="" class="product-hover-overlay-link">
                                 <button class="btn btn-buy" id="buy">
                                     <span class="btn-buy-label ml-2">
-                                        Ajouter
+                                        Demande de réservation
                                     </span>
                                     <i class="fa fa-shopping-cart"></i>
                                 </button>
                             </a>
+                            <div class="mb-4">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="inputEmail" name="email"
+                                        aria-describedby="emailHelp" placeholder="exemple@email.com">
+                                </div>
                         </form>
-                    </div>
+                    </div> -->
                 </div>
              </div>
          </div>
