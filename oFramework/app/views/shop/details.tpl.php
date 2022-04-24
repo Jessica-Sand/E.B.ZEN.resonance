@@ -62,9 +62,9 @@
                         <a href="tel:06.70.48.52.95" id="numb-shop">06 70 48 52 95</a>
                     </h5>
                 </div>
-                <!-- <div class="d-flex justify-content-end">
+                <div class="d-flex justify-content-end">
                     <div class="product-action-buttons">
-                        <form action="" method="post">
+                        <form action="<?= $router->generate('main-send') ?>" method="POST">
                             <input type="hidden" name="product_id" value="1">
                             <a href="" class="product-hover-overlay-link">
                                 <button class="btn btn-buy" id="buy">
@@ -76,7 +76,7 @@
                             </a>
                         </form>
                     </div>
-                </div> -->
+                </div>
              </div>
          </div>
      </div>

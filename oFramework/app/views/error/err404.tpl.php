@@ -7,14 +7,13 @@
 
     <div class="services py-5">
         <div class="container">
-            <div class="row m-5 text-light">
-                <div>
+            <div class="row m-5">
+                <div class="home-return text-center">
                     <h2 class="text-light">
                     Cette page n'existe pas...
                     </h2>
-
-                        <a class="text-light text-center" href="<?= $router->generate('main-home') ?>">retour à l'accueil</a>
-                    
+                    <a href="<?= $router->generate('main-home') ?>">Retour à l'accueil
+                    </a>
                 </div>
             </div>
         </div>

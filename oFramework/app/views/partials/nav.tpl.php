@@ -30,6 +30,11 @@
                     Blog
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link<?= $currentPage == 'contact' ? ' active' : '' ?>" href="<?= $router->generate('main-contact') ?>">
+                    Contact
+                    </a>
+                </li>
                 
             </ul>
         </div>

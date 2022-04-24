@@ -3,7 +3,7 @@
         <div class="card-header bg-light" id="top">
             <!-- Breadcrumbs -->
             <ol class="breadcrumb justify-content-center">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="<?= $router->generate('main-home') ?>">Home</a></li>
                 <li class="breadcrumb-item active">Merci</li>
             </ol>
             <h1 id="list_title">Message envoyé</h1>

@@ -18,7 +18,7 @@
     <section class="informations">
         <div class="text-center text-md-start mt-5">
             <!-- Grid row -->
-            <div class="row mt-3">
+            <div class="row m-0">
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
                     <!-- Content -->
@@ -104,7 +104,7 @@
     <!-- Copyright -->
     <div class="copyright text-center p-4 border-top">
         <p>
-            © 2021 Copyright : <a href="">Résônance EB.ZEN 2021</a>
+            © 2021 Copyright : <a href="<?= $router->generate('main-home') ?>">Résônance EB.ZEN 2021</a>
         </p>
     </div>
 
